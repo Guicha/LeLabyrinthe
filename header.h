@@ -10,6 +10,7 @@
 #include <string.h>
 #include <windows.h>
 #include <time.h>
+#include <dirent.h> // Pour parcourir les fichiers d'un dossier
 
 // === PROGRAMMES DE COULEUR ===
 void Color(int couleurDuTexte,int couleurDeFond);
@@ -17,5 +18,6 @@ void Color(int couleurDuTexte,int couleurDeFond);
 // === MENU ===
 void menu_principal(int *selection);
 void credits(int *selection);
+void consulter_sauvegardes(int *selection);
 
 #endif //PROJET_SEMESTRE_1_HEADER_H
