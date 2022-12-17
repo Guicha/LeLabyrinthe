@@ -45,7 +45,7 @@ void consulter_sauvegardes(int *selection) {
         while ((fichierLu = readdir(rep)) != NULL) {
 
             if ( (strcmp(fichierLu->d_name, ".") == 0) || (strcmp(fichierLu->d_name, "..") == 0)) {
-                //rien a faire
+                //rien a faire: on exclut les
 
             } else {
 
@@ -78,13 +78,25 @@ void consulter_sauvegardes(int *selection) {
         Color(15, 0);
         scanf("%d", selection);
 
-    } while ( (*selection != 0) && (*selection != 1) && (*selection != 2) && (*selection != 3) && (*selection != 4));
+    } while ( (*selection != 0) && !(*selection >= 1 && *selection < numero_sauvegarde));
 
     if (*selection == 0) {
 
         // On retourne au menu
+    } else {
 
+        printf("\n");
+
+        seekdir(rep, *selection+1);
+        printf("\n%s\n", readdir(rep)->d_name);
+
+        printf("\n");
+
+        system("pause");
+
+        *selection = 0;
     }
 
-    printf("\n");
+
+
 }
