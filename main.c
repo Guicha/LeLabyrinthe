@@ -14,6 +14,7 @@ int main() {
 
         if (choix == 0) {
 
+            system("cls");
             menu_principal(&choix);
 
         } else if (choix == 1) {
@@ -21,7 +22,7 @@ int main() {
 
         } else if (choix == 2) {
 
-
+            consulter_sauvegardes(&choix);
         } else if (choix == 3) {
 
             credits(&choix);
