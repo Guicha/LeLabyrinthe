@@ -12,21 +12,22 @@ int main() {
 
 
     // === MATRICES DU PLATEAU DE JEU ===
-    char plateau_de_jeu[8][8] = { {' ', ' ', 25, ' ', 25, ' ', 25, ' '},
-                                  {},
-                                  {},
-                                  {},
-                                  {},
-                                  {},
-                                  {},
-                                  {},
+    char plateau_de_jeu[9][9] = { {' ', ' ',              25,  ' ',       25,  ' ',       25,  ' ',       ' '},
+                                  {' ', tuile_L_2, ' ', tuile_T_1, ' ', tuile_T_1, ' ', tuile_L_3, ' '},
+                                  {26,  ' ',              ' ', ' ',       ' ', ' ',       ' ', ' ',       27 },
+                                  {' ', tuile_T_2,        ' ', tuile_T_2, ' ', tuile_T_1, ' ', tuile_T_3, ' '},
+                                  {26,  ' ',              ' ', ' ',       ' ', ' ',       ' ', ' ',       27},
+                                  {' ', tuile_T_2,        ' ', tuile_T_4, ' ', tuile_T_3, ' ', tuile_T_3, ' '},
+                                  {26,  ' ',              ' ', ' ',       ' ', ' ',       ' ', ' ',       27},
+                                  {' ', tuile_T_1,        ' ', tuile_T_4, ' ', tuile_T_4, ' ', tuile_L_4, ' '},
+                                  {' ', ' ',              24,  ' ',       24,  ' ',       24,  ' ',       ' '}
     };
 
 
     for (int i = 0; i<3; i++) {
         for (int j=0; j<3; j++) {
 
-            printf("%c", tuile_L_1[i][j]);
+            printf("%c", plateau_de_jeu[i][j]);
 
             printf(" ");
 
