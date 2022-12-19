@@ -24,64 +24,34 @@ void consulter_sauvegardes(int *selection);
 // === ICONES DE TRESORS ET POSITIONS ===
 
     // === TUILES L ===
-char tuile_L_1[3][3] = { {'#', ' ', '#'},
-                         {'#', ' ', ' ',},
-                         {'#', '#', '#'},
-};
+extern char tuile_L_1[3][3]; // ╚
 
-char tuile_L_2[3][3] = { {'#', '#', '#'},
-                         {'#', ' ', ' ',},
-                         {'#', ' ', '#'},
-};
+extern char tuile_L_2[3][3]; // ╔
 
-char tuile_L_3[3][3] = { {'#', '#', '#'},
-                         {' ', ' ', '#',},
-                         {'#', ' ', '#'},
-};
+extern char tuile_L_3[3][3]; // ╗
 
-char tuile_L_4[3][3] = { {'#', ' ', '#'},
-                         {' ', ' ', '#',},
-                         {'#', '#', '#'},
-};
+extern char tuile_L_4[3][3]; // ╝
 
 
 
 
     // === TUILES I ===
-char tuile_I_1[3][3] = { {'#', ' ', '#'},
-                         {'#', ' ', '#',},
-                         {'#', ' ', '#'},
-};
+extern char tuile_I_1[3][3]; // ║
 
-char tuile_I_2[3][3] = { {'#', '#', '#'},
-                         {' ', ' ', ' ',},
-                         {'#', '#', '#'},
-};
+extern char tuile_I_2[3][3]; // ═
 
 
 
 
 
     // === TUILES T ===
-char tuile_T_1[3][3] = { {'#', '#', '#'},
-                         {' ', ' ', ' ',},
-                         {'#', ' ', '#'},
-};
+extern char tuile_T_1[3][3]; // ╦
 
-char tuile_T_2[3][3] = { {'#', ' ', '#'},
-                         {'#', ' ', ' ',},
-                         {'#', ' ', '#'},
-};
+extern char tuile_T_2[3][3]; // ╠
 
-char tuile_T_3[3][3] = { {'#', '#', '#'},
-                         {' ', ' ', '#',},
-                         {'#', ' ', '#'},
-};
+extern char tuile_T_3[3][3]; // ╣
 
-char tuile_T_4[3][3] = { {'#', ' ', '#'},
-                         {' ', ' ', ' ',},
-                         {'#', '#', '#'},
-};
+extern char tuile_T_4[3][3]; // ╩
 
 
 #endif //PROJET_SEMESTRE_1_HEADER_H
