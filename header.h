@@ -12,6 +12,10 @@
 #include <time.h>
 #include <dirent.h> // Pour parcourir les fichiers d'un dossier
 
+// === CONSTANTES ===
+#define TAILLE_PSEUDO_JOUEUR 24
+#define TAILLE_PION_JOUEUR 3
+
 // === PROGRAMMES DE COULEUR ===
 void Color(int couleurDuTexte,int couleurDeFond);
 
@@ -25,7 +29,8 @@ void credits(int *selection);
 void consulter_sauvegardes(int *selection);
 
 // === NOUVELLE PARTIE ===
-void creer_partie(int *selection);
+void creer_partie(int *selection, int *nb_joueurs, char nom1[TAILLE_PSEUDO_JOUEUR], char nom2[TAILLE_PSEUDO_JOUEUR], char nom3[TAILLE_PSEUDO_JOUEUR], char nom4[TAILLE_PSEUDO_JOUEUR], char pion1[TAILLE_PION_JOUEUR], char pion2[TAILLE_PION_JOUEUR], char pion3[TAILLE_PION_JOUEUR], char pion4[TAILLE_PION_JOUEUR]);
+
 
 // === ICONES DE TRESORS ET POSITIONS ===
 extern char fleche_haut[11];
