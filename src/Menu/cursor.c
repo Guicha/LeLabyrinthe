@@ -1,0 +1,19 @@
+//
+// Created by guych on 20/12/2022.
+//
+
+#include "../../header.h"
+
+void gotoligcol( int lig, int col ) {
+
+// ressources
+
+    COORD mycoord;
+
+    mycoord.X = col;
+
+    mycoord.Y = lig;
+
+    SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), mycoord );
+
+}

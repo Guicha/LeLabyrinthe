@@ -15,6 +15,9 @@
 // === PROGRAMMES DE COULEUR ===
 void Color(int couleurDuTexte,int couleurDeFond);
 
+// === PROGRAMMES DE CURSEUR ===
+void gotoligcol( int lig, int col );
+
 // === MENU ===
 void menu_principal(int *selection);
 void menu_ingame();

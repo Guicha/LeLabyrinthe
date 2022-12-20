@@ -12,7 +12,7 @@ int main() {
 
 
     // === MATRICES DU PLATEAU DE JEU ===
-    char plateau_de_jeu[9][9] = { {' ', ' ',              25,  ' ',       25,  ' ',       25,  ' ',       ' '},
+    /*char plateau_de_jeu[9][9] = { {' ', ' ',              25,  ' ',       25,  ' ',       25,  ' ',       ' '},
                                   {' ', tuile_L_2, ' ', tuile_T_1, ' ', tuile_T_1, ' ', tuile_L_3, ' '},
                                   {26,  ' ',              ' ', ' ',       ' ', ' ',       ' ', ' ',       27 },
                                   {' ', tuile_T_2,        ' ', tuile_T_2, ' ', tuile_T_1, ' ', tuile_T_3, ' '},
@@ -21,19 +21,61 @@ int main() {
                                   {26,  ' ',              ' ', ' ',       ' ', ' ',       ' ', ' ',       27},
                                   {' ', tuile_T_1,        ' ', tuile_T_4, ' ', tuile_T_4, ' ', tuile_L_4, ' '},
                                   {' ', ' ',              24,  ' ',       24,  ' ',       24,  ' ',       ' '}
-    };
+    };*/
 
 
-    for (int i = 0; i<3; i++) {
-        for (int j=0; j<3; j++) {
+    char *plateau_de_jeu[81] = {};
 
-            printf("%c", plateau_de_jeu[i][j]);
+    char chaine_temp[20];
 
-            printf(" ");
+    int ligne = 0;
+    int ligne_precedente = 0;
+    int colonne = 0;
+    int color_swap = 1;
 
+    gotoligcol(0, 0);
+
+    for (int i = 0; i < 2; ++i) {
+
+        if (color_swap == 1) {
+
+            Color(15, 0);
+            color_swap = 0;
+
+        } else if (color_swap == 0) {
+
+            Color(8, 0);
+            color_swap = 1;
         }
-        printf("\n");
+
+        gotoligcol(ligne, colonne);
+        strcpy(chaine_temp, plateau_de_jeu[i]);
+
+        for (int j = 0; j < 9; ++j) {
+
+            printf("%c", chaine_temp[j]);
+
+            if (j==2 || j==5 || j==8) {
+
+                ligne = ligne + 1;
+                gotoligcol(ligne, colonne);
+            }
+        }
+
+        ligne = ligne_precedente;
+        colonne = colonne + 3;
+
+        if ( i==8 || i==17 || i==26 || i==35 || i==44 || i==53 || i==62 || i==71 || i==80) {
+
+            colonne = 0;
+            ligne_precedente = ligne_precedente + 3;
+        }
+
     }
+
+
+
+
 
     while (alive) {
 
