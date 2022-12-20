@@ -45,7 +45,7 @@ void consulter_sauvegardes(int *selection) {
         while ((fichierLu = readdir(rep)) != NULL) {
 
             if ( (strcmp(fichierLu->d_name, ".") == 0) || (strcmp(fichierLu->d_name, "..") == 0)) {
-                //rien a faire: on exclut les
+                //rien a faire: on exclut les repertoires
 
             } else {
 
