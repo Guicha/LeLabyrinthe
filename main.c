@@ -2,12 +2,21 @@
 
 int main() {
 
-    // === VARIABLES MENU ===
-    int choix = 0;
-    int alive = 0;
-
     // === INITIALISATION DE L'ALEATOIRE ===
     srand(time(NULL));
+
+    // === VARIABLES MENU ===
+    int choix = 0;
+    int alive = 1;
+
+    // === VARIABLES DU PLATEAU DE JEU ===
+    char chaine_temp[20];
+
+    int ligne = 0;
+    int ligne_precedente = 0;
+    int colonne = 0;
+    int color_swap = 1;
+
 
     // === PLATEAU DE JEU ===
     char *plateau_de_jeu[81] = {tuile_esp, tuile_esp, fleche_bas, tuile_esp, fleche_bas, tuile_esp, fleche_bas, tuile_esp, tuile_esp,
@@ -20,23 +29,6 @@ int main() {
                                 tuile_esp, tuile_L_1, tuile_esp, tuile_T_4, tuile_esp, tuile_T_4, tuile_esp, tuile_L_4, tuile_esp,
                                 tuile_esp, tuile_esp, fleche_haut, tuile_esp, fleche_haut, tuile_esp, fleche_haut, tuile_esp, tuile_esp };
 
-    // === VARIABLES DU PLATEAU DE JEU ===
-    char chaine_temp[20];
-
-    int ligne = 0;
-    int ligne_precedente = 0;
-    int colonne = 0;
-    int color_swap = 1;
-
-
-    // === GLOSSAIRE ===
-    /*
-     * f_h = fleche vers le haut
-     * f_b = fleche vers le bas
-     * f_d = fleche vers la droite
-     * f_g = fleche vers la gauche
-     *
-     * */
 
     gotoligcol(0, 0);
 
@@ -171,18 +163,27 @@ int main() {
     }
 
 
-
+    // === VARIABLES NOUVELLE PARTIE ===
+    char joueur1_pseudo[TAILLE_PSEUDO_JOUEUR];
+    char joueur2_pseudo[TAILLE_PSEUDO_JOUEUR];
+    char joueur3_pseudo[TAILLE_PSEUDO_JOUEUR];
+    char joueur4_pseudo[TAILLE_PSEUDO_JOUEUR];
+    char joueur1_pion[TAILLE_PION_JOUEUR];
+    char joueur2_pion[TAILLE_PION_JOUEUR];
+    char joueur3_pion[TAILLE_PION_JOUEUR];
+    char joueur4_pion[TAILLE_PION_JOUEUR];
+    int nombre_joueurs = 0;
 
 
     while (alive) {
 
         if (choix == 0) {
 
-            system("cls");
             menu_principal(&choix);
 
         } else if (choix == 1) {
 
+            creer_partie(&choix, &nombre_joueurs, joueur1_pseudo, joueur2_pseudo, joueur3_pseudo, joueur4_pseudo, joueur1_pion, joueur2_pion, joueur3_pion, joueur4_pion);
 
         } else if (choix == 2) {
 

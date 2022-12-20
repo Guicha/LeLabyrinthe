@@ -7,6 +7,8 @@
 
 void menu_principal(int *selection) {
 
+    system("cls");
+
     int couleur = rand() % (15 - 1 + 1) + 1;
 
     Color(couleur, 0);
