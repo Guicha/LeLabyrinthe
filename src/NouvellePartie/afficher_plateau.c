@@ -13,25 +13,46 @@ void afficher_plateau(char *plateau[81]) {
     int ligne_precedente = 0;
     int colonne = 0;
     int color_swap = 1;
+    int color_ligne = 0;
 
 
     gotoligcol(0, 0);
 
     for (int i = 0; i < 81; ++i) {
 
-        if (color_swap == 1 && strlen(plateau[i]) > 3) {
+        if (color_ligne == 0) {
 
-            Color(15, 0);
-            color_swap = 0;
+            if (color_swap == 1 && strlen(plateau[i]) > 3) {
 
-        } else if (color_swap == 0 && strlen(plateau[i]) > 3) {
+                Color(15, 0);
+                color_swap = 0;
 
-            Color(8, 0);
-            color_swap = 1;
+            } else if (color_swap == 0 && strlen(plateau[i]) > 3) {
 
-        } else {
+                Color(8, 0);
+                color_swap = 1;
 
-            Color(10, 0);
+            } else {
+
+                Color(10, 0);
+            }
+
+        } else if (color_ligne == 1) {
+
+            if (color_swap == 1 && strlen(plateau[i]) > 3) {
+
+                Color(9, 0);
+                color_swap = 0;
+
+            } else if (color_swap == 0 && strlen(plateau[i]) > 3) {
+
+                Color(5, 0);
+                color_swap = 1;
+
+            } else {
+
+                Color(10, 0);
+            }
         }
 
         gotoligcol(ligne, colonne);
@@ -138,6 +159,15 @@ void afficher_plateau(char *plateau[81]) {
             colonne = 0;
             ligne_precedente = ligne_precedente + 3;
 
+            if (color_ligne == 0) {
+
+                color_ligne = 1;
+
+            } else if (color_ligne == 1) {
+
+                color_ligne = 0;
+            }
+
         } else {
 
             ligne = ligne_precedente;
@@ -145,6 +175,13 @@ void afficher_plateau(char *plateau[81]) {
         }
 
 
+
     }
+
+    printf("\n");
+    printf("\n");
+
+
+    system("pause");
 
 }
