@@ -16,11 +16,25 @@
 #define TAILLE_PSEUDO_JOUEUR 24
 #define TAILLE_PION_JOUEUR 3
 
+
+
+// === STRUCTURES ===
+typedef struct carte_joueur {
+
+    char pseudo[TAILLE_PSEUDO_JOUEUR];
+    char pion[TAILLE_PION_JOUEUR];
+
+} t_joueur;
+
+
+
+
+
 // === PROGRAMMES DE COULEUR ===
-void Color(int couleurDuTexte,int couleurDeFond);
+void Color(int couleurDuTexte, int couleurDeFond);
 
 // === PROGRAMMES DE CURSEUR ===
-void gotoligcol( int lig, int col );
+void gotoligcol(int lig, int col);
 
 // === MENU ===
 void menu_principal(int *selection);
@@ -29,51 +43,10 @@ void credits(int *selection);
 void consulter_sauvegardes(int *selection);
 
 // === NOUVELLE PARTIE ===
-void creer_partie(int *selection, int *nb_joueurs, char nom1[TAILLE_PSEUDO_JOUEUR], char nom2[TAILLE_PSEUDO_JOUEUR], char nom3[TAILLE_PSEUDO_JOUEUR], char nom4[TAILLE_PSEUDO_JOUEUR], char pion1[TAILLE_PION_JOUEUR], char pion2[TAILLE_PION_JOUEUR], char pion3[TAILLE_PION_JOUEUR], char pion4[TAILLE_PION_JOUEUR]);
+void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]);
+void afficher_plateau(char *plateau[81]);
 
 
-// === ICONES DE TRESORS ET POSITIONS ===
-extern char fleche_haut[11];
-
-extern char fleche_bas[11];
-
-extern char fleche_gauche[11];
-
-extern char fleche_droite[11];
-
-
-    // === TUILES ESPACE ===
-extern char tuile_esp[11];
-
-    // === TUILES L ===
-extern char tuile_L_1[11]; // ╚
-
-extern char tuile_L_2[11]; // ╔
-
-extern char tuile_L_3[11]; // ╗
-
-extern char tuile_L_4[11]; // ╝
-
-
-
-
-    // === TUILES I ===
-extern char tuile_I_1[11]; // ║
-
-extern char tuile_I_2[11]; // ═
-
-
-
-
-
-    // === TUILES T ===
-extern char tuile_T_1[11]; // ╦
-
-extern char tuile_T_2[11]; // ╠
-
-extern char tuile_T_3[11]; // ╣
-
-extern char tuile_T_4[11]; // ╩
 
 
 #endif //PROJET_SEMESTRE_1_HEADER_H

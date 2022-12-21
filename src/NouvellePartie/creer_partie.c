@@ -4,7 +4,7 @@
 
 #include "../../header.h"
 
-void creer_partie(int *selection, int *nb_joueurs, char nom1[TAILLE_PSEUDO_JOUEUR], char nom2[TAILLE_PSEUDO_JOUEUR], char nom3[TAILLE_PSEUDO_JOUEUR], char nom4[TAILLE_PSEUDO_JOUEUR], char pion1[TAILLE_PION_JOUEUR], char pion2[TAILLE_PION_JOUEUR], char pion3[TAILLE_PION_JOUEUR], char pion4[TAILLE_PION_JOUEUR]) {
+void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]) {
 
     int confirmer;
     int pion;
@@ -87,19 +87,19 @@ void creer_partie(int *selection, int *nb_joueurs, char nom1[TAILLE_PSEUDO_JOUEU
 
             if (pion == 1) {
 
-                strcpy(pion1, "A");
+                strcpy(tab_joueurs[0].pion, "A");
 
             } else if (pion == 2) {
 
-                strcpy(pion1, "B");
+                strcpy(tab_joueurs[0].pion, "B");
 
             } else if (pion == 3) {
 
-                strcpy(pion1, "C");
+                strcpy(tab_joueurs[0].pion, "C");
 
             } else if (pion == 4) {
 
-                strcpy(pion1, "D");
+                strcpy(tab_joueurs[0].pion, "D");
 
             }
 
@@ -135,19 +135,19 @@ void creer_partie(int *selection, int *nb_joueurs, char nom1[TAILLE_PSEUDO_JOUEU
 
             if (pion == 1) {
 
-                strcpy(pion2, "A");
+                strcpy(tab_joueurs[1].pion, "A");
 
             } else if (pion == 2) {
 
-                strcpy(pion2, "B");
+                strcpy(tab_joueurs[1].pion, "B");
 
             } else if (pion == 3) {
 
-                strcpy(pion2, "C");
+                strcpy(tab_joueurs[1].pion, "C");
 
             } else if (pion == 4) {
 
-                strcpy(pion2, "D");
+                strcpy(tab_joueurs[1].pion, "D");
 
             }
 
@@ -183,19 +183,19 @@ void creer_partie(int *selection, int *nb_joueurs, char nom1[TAILLE_PSEUDO_JOUEU
 
             if (pion == 1) {
 
-                strcpy(pion3, "A");
+                strcpy(tab_joueurs[2].pion, "A");
 
             } else if (pion == 2) {
 
-                strcpy(pion3, "B");
+                strcpy(tab_joueurs[2].pion, "B");
 
             } else if (pion == 3) {
 
-                strcpy(pion3, "C");
+                strcpy(tab_joueurs[2].pion, "C");
 
             } else if (pion == 4) {
 
-                strcpy(pion3, "D");
+                strcpy(tab_joueurs[2].pion, "D");
 
             }
 
@@ -231,19 +231,19 @@ void creer_partie(int *selection, int *nb_joueurs, char nom1[TAILLE_PSEUDO_JOUEU
 
             if (pion == 1) {
 
-                strcpy(pion4, "A");
+                strcpy(tab_joueurs[3].pion, "A");
 
             } else if (pion == 2) {
 
-                strcpy(pion4, "B");
+                strcpy(tab_joueurs[3].pion, "B");
 
             } else if (pion == 3) {
 
-                strcpy(pion4, "C");
+                strcpy(tab_joueurs[3].pion, "C");
 
             } else if (pion == 4) {
 
-                strcpy(pion4, "D");
+                strcpy(tab_joueurs[3].pion, "D");
 
             }
 
@@ -278,9 +278,9 @@ void creer_partie(int *selection, int *nb_joueurs, char nom1[TAILLE_PSEUDO_JOUEU
                 Color(15, 0);
 
                 fflush(stdin);
-                gets(nom1);
+                gets(tab_joueurs[0].pseudo);
 
-            } while (strlen(nom1) > TAILLE_PSEUDO_JOUEUR);
+            } while (strlen(tab_joueurs[0].pseudo) > TAILLE_PSEUDO_JOUEUR);
 
             printf("\n");
 
@@ -303,10 +303,10 @@ void creer_partie(int *selection, int *nb_joueurs, char nom1[TAILLE_PSEUDO_JOUEU
                 Color(15, 0);
 
                 fflush(stdin);
-                gets(nom2);
+                gets(tab_joueurs[1].pseudo);
 
 
-            } while ((strcmp(nom1, nom2) == 0) || (strlen(nom2) > TAILLE_PSEUDO_JOUEUR));
+            } while ((strcmp(tab_joueurs[0].pseudo, tab_joueurs[1].pseudo) == 0) || (strlen(tab_joueurs[1].pseudo) > TAILLE_PSEUDO_JOUEUR));
 
             printf("\n");
 
@@ -327,9 +327,9 @@ void creer_partie(int *selection, int *nb_joueurs, char nom1[TAILLE_PSEUDO_JOUEU
                 Color(15, 0);
 
                 fflush(stdin);
-                gets(nom3);
+                gets(tab_joueurs[2].pseudo);
 
-            } while (((strcmp(nom1, nom3) == 0) || (strcmp(nom2, nom3) == 0)) || (strlen(nom3) > TAILLE_PSEUDO_JOUEUR));
+            } while (((strcmp(tab_joueurs[0].pseudo, tab_joueurs[2].pseudo) == 0) || (strcmp(tab_joueurs[1].pseudo, tab_joueurs[2].pseudo) == 0)) || (strlen(tab_joueurs[2].pseudo) > TAILLE_PSEUDO_JOUEUR));
 
             printf("\n");
 
@@ -352,10 +352,10 @@ void creer_partie(int *selection, int *nb_joueurs, char nom1[TAILLE_PSEUDO_JOUEU
                 Color(15, 0);
 
                 fflush(stdin);
-                gets(nom4);
+                gets(tab_joueurs[3].pseudo);
 
 
-            } while (((strcmp(nom1, nom4) == 0) || (strcmp(nom2, nom4) == 0) || (strcmp(nom3, nom4) == 0)) || (strlen(nom4) > TAILLE_PSEUDO_JOUEUR));
+            } while (((strcmp(tab_joueurs[0].pseudo, tab_joueurs[3].pseudo) == 0) || (strcmp(tab_joueurs[1].pseudo, tab_joueurs[3].pseudo) == 0) || (strcmp(tab_joueurs[2].pseudo, tab_joueurs[3].pseudo) == 0)) || (strlen(tab_joueurs[3].pseudo) > TAILLE_PSEUDO_JOUEUR));
 
             printf("\n");
 

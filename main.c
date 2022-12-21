@@ -5,18 +5,72 @@ int main() {
     // === INITIALISATION DE L'ALEATOIRE ===
     srand(time(NULL));
 
-    // === VARIABLES MENU ===
-    int choix = 0;
-    int alive = 1;
 
-    // === VARIABLES DU PLATEAU DE JEU ===
-    char chaine_temp[20];
 
-    int ligne = 0;
-    int ligne_precedente = 0;
-    int colonne = 0;
-    int color_swap = 1;
 
+    // === ICONES DE TRESORS ET POSITIONS ===
+
+        char fleche_haut[11] = "f_h";
+
+        char fleche_bas[11] = "f_b";
+
+        char fleche_gauche[11] = "f_g";
+
+        char fleche_droite[11] = "f_d";
+
+
+    // === TUILES ESPACE ===
+        char tuile_esp[11] = "         ";
+
+
+    // === TUILES L ===
+        char tuile_L_1[11] = "# #"
+                             "#  "
+                             "###"; // ╚
+
+        char tuile_L_2[11] = "###"
+                             "#  "
+                             "# #"; // ╔
+
+        char tuile_L_3[11] = "###"
+                             "  #"
+                             "# #"; // ╗
+
+        char tuile_L_4[11] = "# #"
+                             "  #"
+                             "###"; // ╝
+
+
+
+
+    // === TUILES I ===
+        char tuile_I_1[11] = "# #"
+                             "# #"
+                             "# #"; // ║
+
+        char tuile_I_2[11] = "###"
+                             "   "
+                             "###"; // ═
+
+
+
+
+    // === TUILES T ===
+        char tuile_T_1[11] = "###"
+                             "   "
+                             "# #"; // ╦
+
+        char tuile_T_2[11] = "# #"
+                             "#  "
+                             "# #"; // ╠
+
+        char tuile_T_3[11] = "# #"
+                             "  #"
+                             "# #"; // ╣
+
+        char tuile_T_4[11] = "# #"
+                             "   "
+                             "###"; // ╩
 
     // === PLATEAU DE JEU ===
     char *plateau_de_jeu[81] = {tuile_esp, tuile_esp, fleche_bas, tuile_esp, fleche_bas, tuile_esp, fleche_bas, tuile_esp, tuile_esp,
@@ -30,148 +84,23 @@ int main() {
                                 tuile_esp, tuile_esp, fleche_haut, tuile_esp, fleche_haut, tuile_esp, fleche_haut, tuile_esp, tuile_esp };
 
 
-    gotoligcol(0, 0);
-
-    for (int i = 0; i < 81; ++i) {
-
-        if (color_swap == 1 && strlen(plateau_de_jeu[i]) > 3) {
-
-            Color(15, 0);
-            color_swap = 0;
-
-        } else if (color_swap == 0 && strlen(plateau_de_jeu[i]) > 3) {
-
-            Color(8, 0);
-            color_swap = 1;
-
-        } else {
-
-            Color(10, 0);
-        }
-
-        gotoligcol(ligne, colonne);
-        strcpy(chaine_temp, plateau_de_jeu[i]);
-
-        if (strcmp(chaine_temp, "f_h") == 0) {
-
-            printf(" ");
-            printf(" ");
-            printf(" ");
-
-            ligne=ligne+1;
-            gotoligcol(ligne, colonne);
-
-            printf(" ");
-            printf("%c", 0x1E);
-            printf(" ");
-
-            ligne=ligne+1;
-            gotoligcol(ligne, colonne);
-
-            printf(" ");
-            printf(" ");
-            printf(" ");
-
-        } else if (strcmp(chaine_temp, "f_b") == 0) {
-
-            printf(" ");
-            printf(" ");
-            printf(" ");
-
-            ligne=ligne+1;
-            gotoligcol(ligne, colonne);
-
-            printf(" ");
-            printf("%c", 0x1F);
-            printf(" ");
-
-            ligne=ligne+1;
-            gotoligcol(ligne, colonne);
-
-            printf(" ");
-            printf(" ");
-            printf(" ");
-
-        } else if (strcmp(chaine_temp, "f_g") == 0) {
-
-            printf(" ");
-            printf(" ");
-            printf(" ");
-
-            ligne=ligne+1;
-            gotoligcol(ligne, colonne);
-
-            printf(" ");
-            printf("%c", 0x11);
-            printf(" ");
-
-            ligne=ligne+1;
-            gotoligcol(ligne, colonne);
-
-            printf(" ");
-            printf(" ");
-            printf(" ");
-
-        } else if (strcmp(chaine_temp, "f_d") == 0) {
-
-            printf(" ");
-            printf(" ");
-            printf(" ");
-
-            ligne=ligne+1;
-            gotoligcol(ligne, colonne);
-
-            printf(" ");
-            printf("%c", 0x10);
-            printf(" ");
-
-            ligne=ligne+1;
-            gotoligcol(ligne, colonne);
-
-            printf(" ");
-            printf(" ");
-            printf(" ");
-
-        } else {
-
-            for (int j = 0; j < 9; ++j) {
-
-                printf("%c", chaine_temp[j]);
-
-                if (j==2 || j==5 || j==8) {
-
-                    ligne = ligne + 1;
-                    gotoligcol(ligne, colonne);
-                }
-            }
-        }
+    //afficher_plateau(plateau_de_jeu);
 
 
 
-        if ( i==8 || i==17 || i==26 || i==35 || i==44 || i==53 || i==62 || i==71 || i==80) {
 
-            colonne = 0;
-            ligne_precedente = ligne_precedente + 3;
+    // === VARIABLES MENU ===
+    int choix = 0;
+    int alive = 1;
 
-        } else {
-
-            ligne = ligne_precedente;
-            colonne = colonne + 3;
-        }
-
-
-    }
 
 
     // === VARIABLES NOUVELLE PARTIE ===
-    char joueur1_pseudo[TAILLE_PSEUDO_JOUEUR];
-    char joueur2_pseudo[TAILLE_PSEUDO_JOUEUR];
-    char joueur3_pseudo[TAILLE_PSEUDO_JOUEUR];
-    char joueur4_pseudo[TAILLE_PSEUDO_JOUEUR];
-    char joueur1_pion[TAILLE_PION_JOUEUR];
-    char joueur2_pion[TAILLE_PION_JOUEUR];
-    char joueur3_pion[TAILLE_PION_JOUEUR];
-    char joueur4_pion[TAILLE_PION_JOUEUR];
+    t_joueur joueur1;
+    t_joueur joueur2;
+    t_joueur joueur3;
+    t_joueur joueur4;
+    t_joueur tableau_joueurs[4] = {joueur1, joueur2, joueur3, joueur4};
     int nombre_joueurs = 0;
 
 
@@ -183,7 +112,11 @@ int main() {
 
         } else if (choix == 1) {
 
-            creer_partie(&choix, &nombre_joueurs, joueur1_pseudo, joueur2_pseudo, joueur3_pseudo, joueur4_pseudo, joueur1_pion, joueur2_pion, joueur3_pion, joueur4_pion);
+            // === CREATION DE LA PARTIE ===
+            creer_partie(&choix, &nombre_joueurs, tableau_joueurs);
+
+            // === INITIALISATION DU PLATEAU ===
+
 
         } else if (choix == 2) {
 
