@@ -88,7 +88,8 @@ int main() {
                                 tuile_esp, tuile_esp, fleche_haut, tuile_esp, fleche_haut, tuile_esp, fleche_haut, tuile_esp, tuile_esp };
 
 
-    //afficher_plateau(plateau_de_jeu);
+
+
 
 
 
@@ -99,13 +100,14 @@ int main() {
 
 
 
-    // === VARIABLES NOUVELLE PARTIE ===
+    // === VARIABLES (NOUVELLE) PARTIE ===
     t_joueur joueur1;
     t_joueur joueur2;
     t_joueur joueur3;
     t_joueur joueur4;
     t_joueur tableau_joueurs[4] = {joueur1, joueur2, joueur3, joueur4};
     int nombre_joueurs = 0;
+    int init_partie = 1;
 
 
     while (alive) {
@@ -116,11 +118,23 @@ int main() {
 
         } else if (choix == 1) {
 
-            // === CREATION DE LA PARTIE ===
-            creer_partie(&choix, &nombre_joueurs, tableau_joueurs);
+            if (init_partie == 1) {
 
-            // === INITIALISATION DU PLATEAU ===
+                // === CREATION DE LA PARTIE ===
+                creer_partie(&choix, &nombre_joueurs, tableau_joueurs);
 
+                // === INITIALISATION DU PLATEAU ===
+
+
+                init_partie = 0;
+
+                system("cls");
+            }
+
+            // === AFFICHAGE DU PLATEAU ===
+            afficher_plateau(plateau_de_jeu);
+
+            init_plateau(plateau_de_jeu, sac_de_tuiles);
 
         } else if (choix == 2) {
 
