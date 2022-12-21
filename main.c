@@ -72,6 +72,10 @@ int main() {
                              "   "
                              "###"; // ╩
 
+
+    // === TABLEAU/SAC DE TUILES ===
+    char *sac_de_tuiles[10] = {tuile_L_1, tuile_L_2, tuile_L_3, tuile_L_4, tuile_T_1, tuile_T_2, tuile_T_3, tuile_T_4, tuile_I_1, tuile_I_2};
+
     // === PLATEAU DE JEU ===
     char *plateau_de_jeu[81] = {tuile_esp, tuile_esp, fleche_bas, tuile_esp, fleche_bas, tuile_esp, fleche_bas, tuile_esp, tuile_esp,
                                 tuile_esp, tuile_L_2, tuile_esp, tuile_T_1, tuile_esp, tuile_T_1, tuile_esp, tuile_L_3, tuile_esp,
