@@ -108,6 +108,7 @@ int main() {
     t_joueur tableau_joueurs[4] = {joueur1, joueur2, joueur3, joueur4};
     int nombre_joueurs = 0;
     int init_partie = 1;
+    int notice = 1;
 
 
     while (alive) {
@@ -125,16 +126,30 @@ int main() {
 
                 // === INITIALISATION DU PLATEAU ===
 
+                init_plateau(plateau_de_jeu, sac_de_tuiles);
 
                 init_partie = 0;
+
+
+            }
+
+            system("cls");
+
+            if (notice == 1) {
+
+                notice_joueurs();
+
+                notice = 0;
 
                 system("cls");
             }
 
+
+
             // === AFFICHAGE DU PLATEAU ===
             afficher_plateau(plateau_de_jeu);
 
-            init_plateau(plateau_de_jeu, sac_de_tuiles);
+
 
         } else if (choix == 2) {
 

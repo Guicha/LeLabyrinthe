@@ -54,14 +54,47 @@ void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]) {
 
     for (int i=1; i<*nb_joueurs+1; i++)
     {
-        printf("\nChoissisez le pion du joueur %d : \n", i);
+        printf("Choissisez le pion du ");
+
+        if (i==1) {
+
+            Color(12, 0);
+
+            printf("joueur %d", i);
+
+        } else if (i==2) {
+
+            Color(1, 0);
+
+            printf("joueur %d", i);
+
+        } else if (i==3) {
+
+            Color(2, 0);
+
+            printf("joueur %d", i);
+
+        } else if (i==4) {
+
+            Color(14, 0);
+
+            printf("joueur %d", i);
+
+        }
+
+        Color(15, 0);
+
+        printf(" : \n");
 
         // === AFFICHAGE DES CARACTERES DISPONIBLES POUR CHOIX PIONS ===
 
         for (int j = 0; j < nb_pions; j++)
         {
-            printf("\n %d) %c \n",j+1, liste_pion[j]);
+            printf("%d) %c \n", j+1, liste_pion[j]);
         }
+
+        printf("\n");
+
         do
         {
             Color(4, 0);
@@ -96,12 +129,14 @@ void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]) {
 
         // === REDUCTION DE LA LISTE DE PIONS ===
 
-        for(int k = choix_pion; k < nb_pions; k++)
+        for (int k = choix_pion; k < nb_pions; k++)
         {
             liste_pion[k] = liste_pion[k+1];
         }
 
         nb_pions--;
+
+        printf("\n");
     }
 
     printf("\n");

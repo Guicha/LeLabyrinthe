@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Projet_semestre_1::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Projet_semestre_1-Debug-b82def322ad5bd3e17b1.json",
+					"jsonFile" : "target-Projet_semestre_1-Debug-b7df034ab8f07a1439f5.json",
 					"name" : "Projet_semestre_1",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug",
-		"source" : "C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1"
+		"build" : "C:/Users/guych/Desktop/Programmation/Langage C/Projet-Algo-Semestre-1/cmake-build-debug",
+		"source" : "C:/Users/guych/Desktop/Programmation/Langage C/Projet-Algo-Semestre-1"
 	},
 	"version" : 
 	{
