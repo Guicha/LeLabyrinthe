@@ -46,6 +46,7 @@ void consulter_sauvegardes(int *selection);
 void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]);
 void afficher_plateau(char *plateau[81]);
 void init_plateau(char *plateau[81], char *tab_tuiles[10]);
+void notice_joueurs();
 
 
 

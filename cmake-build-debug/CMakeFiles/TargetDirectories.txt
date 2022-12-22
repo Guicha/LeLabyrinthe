@@ -1,3 +1,3 @@
-C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug/CMakeFiles/Projet_semestre_1.dir
-C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/guych/Desktop/Programmation/Langage C/Projet-Algo-Semestre-1/cmake-build-debug/CMakeFiles/Projet_semestre_1.dir
+C:/Users/guych/Desktop/Programmation/Langage C/Projet-Algo-Semestre-1/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/guych/Desktop/Programmation/Langage C/Projet-Algo-Semestre-1/cmake-build-debug/CMakeFiles/rebuild_cache.dir

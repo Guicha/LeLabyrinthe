@@ -109,6 +109,12 @@ build CMakeFiles/Projet_semestre_1.dir/src/NouvellePartie/afficher_plateau.c.obj
   OBJECT_DIR = CMakeFiles\Projet_semestre_1.dir
   OBJECT_FILE_DIR = CMakeFiles\Projet_semestre_1.dir\src\NouvellePartie
 
+build CMakeFiles/Projet_semestre_1.dir/src/NouvellePartie/notice_joueurs.c.obj: C_COMPILER__Projet_semestre_1_Debug C$:/Users/guych/Desktop/Programmation/Langage$ C/Projet-Algo-Semestre-1/src/NouvellePartie/notice_joueurs.c || cmake_object_order_depends_target_Projet_semestre_1
+  DEP_FILE = CMakeFiles\Projet_semestre_1.dir\src\NouvellePartie\notice_joueurs.c.obj.d
+  FLAGS = -g -std=gnu2x
+  OBJECT_DIR = CMakeFiles\Projet_semestre_1.dir
+  OBJECT_FILE_DIR = CMakeFiles\Projet_semestre_1.dir\src\NouvellePartie
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Projet_semestre_1
@@ -117,7 +123,7 @@ build CMakeFiles/Projet_semestre_1.dir/src/NouvellePartie/afficher_plateau.c.obj
 #############################################
 # Link the executable Projet_semestre_1.exe
 
-build Projet_semestre_1.exe: C_EXECUTABLE_LINKER__Projet_semestre_1_Debug CMakeFiles/Projet_semestre_1.dir/main.c.obj CMakeFiles/Projet_semestre_1.dir/src/Menu/menu_principal.c.obj CMakeFiles/Projet_semestre_1.dir/src/Menu/credits-regles.c.obj CMakeFiles/Projet_semestre_1.dir/src/Menu/color.c.obj CMakeFiles/Projet_semestre_1.dir/src/Menu/consulter_sauvegardes.c.obj CMakeFiles/Projet_semestre_1.dir/src/Menu/menu_ingame.c.obj CMakeFiles/Projet_semestre_1.dir/src/Menu/cursor.c.obj CMakeFiles/Projet_semestre_1.dir/src/NouvellePartie/creer_partie.c.obj CMakeFiles/Projet_semestre_1.dir/src/NouvellePartie/init_plateau.c.obj CMakeFiles/Projet_semestre_1.dir/src/NouvellePartie/afficher_plateau.c.obj
+build Projet_semestre_1.exe: C_EXECUTABLE_LINKER__Projet_semestre_1_Debug CMakeFiles/Projet_semestre_1.dir/main.c.obj CMakeFiles/Projet_semestre_1.dir/src/Menu/menu_principal.c.obj CMakeFiles/Projet_semestre_1.dir/src/Menu/credits-regles.c.obj CMakeFiles/Projet_semestre_1.dir/src/Menu/color.c.obj CMakeFiles/Projet_semestre_1.dir/src/Menu/consulter_sauvegardes.c.obj CMakeFiles/Projet_semestre_1.dir/src/Menu/menu_ingame.c.obj CMakeFiles/Projet_semestre_1.dir/src/Menu/cursor.c.obj CMakeFiles/Projet_semestre_1.dir/src/NouvellePartie/creer_partie.c.obj CMakeFiles/Projet_semestre_1.dir/src/NouvellePartie/init_plateau.c.obj CMakeFiles/Projet_semestre_1.dir/src/NouvellePartie/afficher_plateau.c.obj CMakeFiles/Projet_semestre_1.dir/src/NouvellePartie/notice_joueurs.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Projet_semestre_1.dir
