@@ -74,16 +74,7 @@ int main() {
                              "   "
                              "###"; // ╩
 
-
-    // === TUILES T Trésor ===
-    
-    char tuile_T_bougie[11] = "###"
-                              " B "
-                              "# #";
-    
-    char tuile_T_Emeraude[11] = "# #"
-                                "#E#"
-                                "# #";
+                           
     
     
     
