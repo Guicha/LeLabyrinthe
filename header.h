@@ -14,7 +14,7 @@
 
 // === CONSTANTES ===
 #define TAILLE_PSEUDO_JOUEUR 24
-#define TAILLE_PION_JOUEUR 3
+
 
 
 
@@ -22,7 +22,7 @@
 typedef struct carte_joueur {
 
     char pseudo[TAILLE_PSEUDO_JOUEUR];
-    char pion[TAILLE_PION_JOUEUR];
+    int pion;
 
 } t_joueur;
 

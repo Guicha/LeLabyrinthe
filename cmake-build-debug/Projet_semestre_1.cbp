@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Projet_semestre_1"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Projet_semestre_1">
+				<Option output="C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug/Projet_semestre_1.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 Projet_semestre_1"/>
+					<CompileFile command="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Projet_semestre_1/fast">
+				<Option output="C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug/Projet_semestre_1.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 Projet_semestre_1/fast"/>
+					<CompileFile command="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/C zebi/CLion 2022.2.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/header.h">
+			<Option target="Projet_semestre_1"/>
+		</Unit>
+		<Unit filename="C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/main.c">
+			<Option target="Projet_semestre_1"/>
+		</Unit>
+		<Unit filename="C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/src/Menu/color.c">
+			<Option target="Projet_semestre_1"/>
+		</Unit>
+		<Unit filename="C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/src/Menu/consulter_sauvegardes.c">
+			<Option target="Projet_semestre_1"/>
+		</Unit>
+		<Unit filename="C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/src/Menu/credits-regles.c">
+			<Option target="Projet_semestre_1"/>
+		</Unit>
+		<Unit filename="C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/src/Menu/cursor.c">
+			<Option target="Projet_semestre_1"/>
+		</Unit>
+		<Unit filename="C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/src/Menu/menu_ingame.c">
+			<Option target="Projet_semestre_1"/>
+		</Unit>
+		<Unit filename="C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/src/Menu/menu_principal.c">
+			<Option target="Projet_semestre_1"/>
+		</Unit>
+		<Unit filename="C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/src/NouvellePartie/afficher_plateau.c">
+			<Option target="Projet_semestre_1"/>
+		</Unit>
+		<Unit filename="C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/src/NouvellePartie/creer_partie.c">
+			<Option target="Projet_semestre_1"/>
+		</Unit>
+		<Unit filename="C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/src/NouvellePartie/init_plateau.c">
+			<Option target="Projet_semestre_1"/>
+		</Unit>
+		<Unit filename="C:/Users/deoli/Downloads/Projet-Algo-Semestre-1-main/SUII/Projet-Algo-Semestre-1/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
