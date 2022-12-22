@@ -7,11 +7,10 @@
 void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]) {
 
     int confirmer;
-    int pion;
-    int choix_pion1;
-    int choix_pion2;
-    int choix_pion3;
-    int choix_pion4;
+    int nb_pions = 4;
+    int choix_pion;
+    int liste_pion[5] = {36, 156, 157, 190};   //    36 = $  |  156 = £  |   157 = Ø     |   190 = ¥     |;
+
 
     system("cls");
 
@@ -41,6 +40,7 @@ void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]) {
 
     } while ((*nb_joueurs != 2) && (*nb_joueurs != 3) && (*nb_joueurs != 4));
 
+
     printf("\n");
 
     Color(10, 0);
@@ -51,208 +51,57 @@ void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]) {
 
     printf("\n");
 
-    for (int i=0; i<*nb_joueurs; i++) {
 
-        printf("\n");
+    for (int i=1; i<*nb_joueurs+1; i++)
+    {
+        printf("\nChoissisez le pion du joueur %d : \n", i);
 
-        printf("Merci de saisir le pion du ");
+        // === AFFICHAGE DES CARACTERES DISPONIBLES POUR CHOIX PIONS ===
 
-        if (i == 0) {
+        for (int j = 0; j < nb_pions; j++)
+        {
+            printf("\n %d) %c \n",j+1, liste_pion[j]);
+        }
+        do
+        {
+            Color(4, 0);
 
-            Color(12, 0);
-            printf("joueur %d", i+1);
+            printf(">> ");
+
             Color(15, 0);
-
-            printf(": \n");
-
-            printf("1) A \n");
-            printf("2) B \n");
-            printf("3) C \n");
-            printf("4) D \n");
-
-            printf("\n");
-
-            do {
-
-                Color(4, 0);
-
-                printf(">> ");
-
-                Color(15, 0);
-
-                scanf("%d", &pion);
-
-
-            } while (pion != 1 && pion != 2 && pion != 3 && pion != 4);
-
-            if (pion == 1) {
-
-                strcpy(tab_joueurs[0].pion, "A");
-
-            } else if (pion == 2) {
-
-                strcpy(tab_joueurs[0].pion, "B");
-
-            } else if (pion == 3) {
-
-                strcpy(tab_joueurs[0].pion, "C");
-
-            } else if (pion == 4) {
-
-                strcpy(tab_joueurs[0].pion, "D");
-
-            }
-
-            choix_pion1 = pion;
-
-        } else if (i == 1) {
-
-            Color(1, 0);
-            printf("joueur %d", i+1);
-            Color(15, 0);
-
-            printf(": \n");
-
-            printf("1) A \n");
-            printf("2) B \n");
-            printf("3) C \n");
-            printf("4) D \n");
-
-            printf("\n");
-
-            do {
-
-                Color(4, 0);
-
-                printf(">> ");
-
-                Color(15, 0);
-
-                scanf("%d", &pion);
-
-
-            } while ((pion != 1 && pion != 2 && pion != 3 && pion != 4) || (pion == choix_pion1));
-
-            if (pion == 1) {
-
-                strcpy(tab_joueurs[1].pion, "A");
-
-            } else if (pion == 2) {
-
-                strcpy(tab_joueurs[1].pion, "B");
-
-            } else if (pion == 3) {
-
-                strcpy(tab_joueurs[1].pion, "C");
-
-            } else if (pion == 4) {
-
-                strcpy(tab_joueurs[1].pion, "D");
-
-            }
-
-            choix_pion2 = pion;
-
-        } else if (i == 2) {
-
-            Color(2, 0);
-            printf("joueur %d", i+1);
-            Color(15, 0);
-
-            printf(": \n");
-
-            printf("1) A \n");
-            printf("2) B \n");
-            printf("3) C \n");
-            printf("4) D \n");
-
-            printf("\n");
-
-            do {
-
-                Color(4, 0);
-
-                printf(">> ");
-
-                Color(15, 0);
-
-                scanf("%d", &pion);
-
-
-            } while ((pion != 1 && pion != 2 && pion != 3 && pion != 4) || (pion == choix_pion1) || (pion == choix_pion2));
-
-            if (pion == 1) {
-
-                strcpy(tab_joueurs[2].pion, "A");
-
-            } else if (pion == 2) {
-
-                strcpy(tab_joueurs[2].pion, "B");
-
-            } else if (pion == 3) {
-
-                strcpy(tab_joueurs[2].pion, "C");
-
-            } else if (pion == 4) {
-
-                strcpy(tab_joueurs[2].pion, "D");
-
-            }
-
-            choix_pion3 = pion;
-
-        } else if (i == 3) {
-
-            Color(14, 0);
-            printf("joueur %d", i+1);
-            Color(15, 0);
-
-            printf(": \n");
-
-            printf("1) A \n");
-            printf("2) B \n");
-            printf("3) C \n");
-            printf("4) D \n");
-
-            printf("\n");
-
-            do {
-
-                Color(4, 0);
-
-                printf(">> ");
-
-                Color(15, 0);
-
-                scanf("%d", &pion);
-
-
-            } while ((pion != 1 && pion != 2 && pion != 3 && pion != 4) || (pion == choix_pion1) || (pion == choix_pion2) || (pion == choix_pion3));
-
-            if (pion == 1) {
-
-                strcpy(tab_joueurs[3].pion, "A");
-
-            } else if (pion == 2) {
-
-                strcpy(tab_joueurs[3].pion, "B");
-
-            } else if (pion == 3) {
-
-                strcpy(tab_joueurs[3].pion, "C");
-
-            } else if (pion == 4) {
-
-                strcpy(tab_joueurs[3].pion, "D");
-
-            }
-
-            choix_pion4 = pion;
-
+            scanf("%d",&choix_pion);
+
+        }while( (choix_pion > nb_pions) || (choix_pion < 1) ); // Blindage de la saisie
+
+        choix_pion -= 1;
+
+        // === ATTRIBUTIONS DES PIONS ===
+
+        if (i == 1)
+        {
+            tab_joueurs[0].pion = liste_pion[choix_pion];
+        }
+        else if ( i == 2)
+        {
+            tab_joueurs[1].pion = liste_pion[choix_pion];
+        }
+        else if ( i == 3)
+        {
+            tab_joueurs[2].pion = liste_pion[choix_pion];
+        }
+        else if ( i == 4)
+        {
+            tab_joueurs[3].pion = liste_pion[choix_pion];
         }
 
+        // === REDUCTION DE LA LISTE DE PIONS ===
 
+        for(int k = choix_pion; k < nb_pions; k++)
+        {
+            liste_pion[k] = liste_pion[k+1];
+        }
 
+        nb_pions--;
     }
 
     printf("\n");
