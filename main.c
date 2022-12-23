@@ -94,7 +94,190 @@ int main() {
                                 tuile_esp, tuile_L_1, tuile_esp, tuile_T_4, tuile_esp, tuile_T_4, tuile_esp, tuile_L_4, tuile_esp,
                                 tuile_esp, tuile_esp, fleche_haut, tuile_esp, fleche_haut, tuile_esp, fleche_haut, tuile_esp, tuile_esp };
 
+    // C = Cavalier
+    // B = Bougie
+    // E = Epée
+    // e = Emeraude
+    // b = bague
+    // f = coffre
+    // S = Sac de trésor
+    // T = Tete de Mort
+    // L = Livre
+    // K = Clé
+    // c = Carte
+    // 128 ²&"= couronne
 
+    char *chaine_temp_init_plateau = NULL;
+
+    for (int i = 0; i < 81; ++i)
+    {
+
+        chaine_temp_init_plateau = malloc(11 * sizeof (char));
+
+
+        if (i  == 10)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 231;
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+
+        }
+
+
+        if (i  == 12)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 'C'; /// Cavalier
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+
+        if(i == 14)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 'B'; /// Bougie
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+
+        if(i == 16)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 'V'; /// Pion vert
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+
+        if(i == 28)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 'E'; /// Epée
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+
+        if(i == 30)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 'e'; /// Emeraude
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+
+        if(i == 32)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 'f'; /// Coffre
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+
+        if(i == 34)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 'b'; /// Bague
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+
+        if(i == 46)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 'T'; /// Tete de mort/crane
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+
+        if(i == 48)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 'K'; /// Clé
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+
+        if(i == 50)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 128; /// Couronne
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+
+        if(i == 52)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 'c'; /// Carte au trésor
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+
+        if(i == 64)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 'J'; /// Pion Jaune
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+
+        if(i == 66)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 'S'; /// Sac de trésor
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+
+        if(i == 68)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 'L'; /// Livre
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+
+        if(i == 70)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 'R'; /// Pion Rouge
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+    }
+
+    free(chaine_temp_init_plateau);
 
 
     // === VARIABLES MENU ===
@@ -375,7 +558,7 @@ int main() {
 
                 free(chaine_temp);
 
-                //init_partie = 0;
+                init_partie = 1;
 
             }
 
@@ -389,7 +572,6 @@ int main() {
 
                 system("cls");
             }
-
 
 
             // === AFFICHAGE DU PLATEAU ===
