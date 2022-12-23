@@ -7,6 +7,7 @@ int main() {
 
 
 
+    
 
 
     // === ICONES DE TRESORS ET POSITIONS ===
@@ -22,7 +23,6 @@ int main() {
 
     // === TUILES ESPACE ===
         char tuile_esp[11] = "         ";
-
 
 
     // === TUILES L ===
@@ -74,7 +74,10 @@ int main() {
                              "   "
                              "###"; // ╩
 
-
+                           
+    
+    
+    
     // === TABLEAU/SAC DE TUILES ===
     char sac_de_tuiles[10][11] = {"# ##  ###", "####  # #", "###  ## #", "# #  ####", "###   # #", "# ##  # #", "# #  ## #", "# #   ###", "# ## ## #", "###   ###"};
                                     //{tuile_L_1,         tuile_L_2,       tuile_L_3,     tuile_L_4,          tuile_T_1,      tuile_T_2,      tuile_T_3,       tuile_T_4,       tuile_I_1,       tuile_I_2}
