@@ -12,16 +12,37 @@
 #include <time.h>
 #include <dirent.h> // Pour parcourir les fichiers d'un dossier
 
+// === CONSTANTES ===
+
+#define TAILLE_PSEUDO_JOUEUR 24
+#define LIGNE_DEFAUT 4
+#define COLONNE_DEFAUT 10
+
 // === PROGRAMMES DE COULEUR ===
 void Color(int couleurDuTexte,int couleurDeFond);
 
-<<<<<<< Updated upstream
+
 // === PROGRAMMES DE CURSEUR ===
 void gotoligcol( int lig, int col );
-=======
-#define LIGNE_DEFAUT 4
-#define COLONNE_DEFAUT 10
->>>>>>> Stashed changes
+
+
+// === STRUCTURES ===
+typedef struct carte_joueur {
+
+    char pseudo[TAILLE_PSEUDO_JOUEUR];
+    int pion;
+
+} t_joueur;
+
+
+
+
+
+// === PROGRAMMES DE COULEUR ===
+void Color(int couleurDuTexte, int couleurDeFond);
+
+// === PROGRAMMES DE CURSEUR ===
+void gotoligcol(int lig, int col);
 
 // === MENU ===
 void menu_principal(int *selection);
@@ -30,50 +51,12 @@ void credits(int *selection);
 void consulter_sauvegardes(int *selection);
 
 // === NOUVELLE PARTIE ===
-void creer_partie(int *selection);
-
-// === ICONES DE TRESORS ET POSITIONS ===
-extern char fleche_haut[11];
-
-extern char fleche_bas[11];
-
-extern char fleche_gauche[11];
-
-extern char fleche_droite[11];
+void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]);
+void afficher_plateau(char *plateau[81]);
+void init_plateau(char *plateau[81], char *tab_tuiles[10]);
+void notice_joueurs();
 
 
-    // === TUILES ESPACE ===
-extern char tuile_esp[11];
-
-    // === TUILES L ===
-extern char tuile_L_1[11]; // ╚
-
-extern char tuile_L_2[11]; // ╔
-
-extern char tuile_L_3[11]; // ╗
-
-extern char tuile_L_4[11]; // ╝
-
-
-
-
-    // === TUILES I ===
-extern char tuile_I_1[11]; // ║
-
-extern char tuile_I_2[11]; // ═
-
-
-
-
-
-    // === TUILES T ===
-extern char tuile_T_1[11]; // ╦
-
-extern char tuile_T_2[11]; // ╠
-
-extern char tuile_T_3[11]; // ╣
-
-extern char tuile_T_4[11]; // ╩
 
 
 #endif //PROJET_SEMESTRE_1_HEADER_H

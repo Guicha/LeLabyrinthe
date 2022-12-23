@@ -9,6 +9,7 @@ void afficher_plateau(char *plateau[81]) {
     // === VARIABLES DU PLATEAU DE JEU ===
     char chaine_temp[20];
 
+
     int ligne = LIGNE_DEFAUT;
     int ligne_precedente = LIGNE_DEFAUT;
     int colonne = COLONNE_DEFAUT;
@@ -33,6 +34,7 @@ void afficher_plateau(char *plateau[81]) {
 
 
     gotoligcol(LIGNE_DEFAUT, COLONNE_DEFAUT);
+
 
     for (int i = 0; i < 81; ++i) {
 
@@ -174,7 +176,6 @@ void afficher_plateau(char *plateau[81]) {
 
                 }
 
-
             }
         }
 
@@ -183,6 +184,7 @@ void afficher_plateau(char *plateau[81]) {
         if ( i==8 || i==17 || i==26 || i==35 || i==44 || i==53 || i==62 || i==71 || i==80) {
 
             colonne = COLONNE_DEFAUT;
+
             ligne_precedente = ligne_precedente + 3;
 
             if (color_ligne == 0) {
@@ -219,6 +221,7 @@ void afficher_plateau(char *plateau[81]) {
     }
 
     gotoligcol(ligne, 0);
+
 
     printf("\n");
     printf("\n");

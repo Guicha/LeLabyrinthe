@@ -63,7 +63,9 @@
 				6,
 				7,
 				8,
-				9
+				9,
+				10,
+				11
 			]
 		}
 	],
@@ -108,7 +110,9 @@
 				6,
 				7,
 				8,
-				9
+				9,
+				10,
+				11
 			]
 		},
 		{
@@ -165,12 +169,6 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "header.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
 			"path" : "src/Menu/cursor.c",
 			"sourceGroupIndex" : 0
 		},
@@ -178,6 +176,24 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/NouvellePartie/creer_partie.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/NouvellePartie/init_plateau.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/NouvellePartie/afficher_plateau.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/NouvellePartie/notice_joueurs.c",
 			"sourceGroupIndex" : 0
 		}
 	],

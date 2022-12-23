@@ -2,16 +2,8 @@
 
 int main() {
 
-    // === VARIABLES MENU ===
-    int choix = 0;
-    int alive = 0;
-
     // === INITIALISATION DE L'ALEATOIRE ===
     srand(time(NULL));
-
-<<<<<<< Updated upstream
-=======
-
 
 
     // === ICONES DE TRESORS ET POSITIONS ===
@@ -87,7 +79,7 @@ int main() {
                                     //{tuile_L_1,         tuile_L_2,       tuile_L_3,     tuile_L_4,          tuile_T_1,      tuile_T_2,      tuile_T_3,       tuile_T_4,       tuile_I_1,       tuile_I_2}
 
 
->>>>>>> Stashed changes
+
     // === PLATEAU DE JEU ===
     char *plateau_de_jeu[81] = {tuile_esp, tuile_esp, fleche_bas, tuile_esp, fleche_bas, tuile_esp, fleche_bas, tuile_esp, tuile_esp,
                                 tuile_esp, tuile_L_2, tuile_esp, tuile_T_1, tuile_esp, tuile_T_1, tuile_esp, tuile_L_3, tuile_esp,
@@ -99,171 +91,223 @@ int main() {
                                 tuile_esp, tuile_L_1, tuile_esp, tuile_T_4, tuile_esp, tuile_T_4, tuile_esp, tuile_L_4, tuile_esp,
                                 tuile_esp, tuile_esp, fleche_haut, tuile_esp, fleche_haut, tuile_esp, fleche_haut, tuile_esp, tuile_esp };
 
-    // === VARIABLES DU PLATEAU DE JEU ===
-    char chaine_temp[20];
+    // C = Cavalier
+    // B = Bougie
+    // E = Epée
+    // e = Emeraude
+    // b = bague
+    // f = coffre
+    // S = Sac de trésor
+    // T = Tete de Mort
+    // L = Livre
+    // K = Clé
+    // c = Carte
+    // 128 = couronne
 
-    int ligne = 0;
-    int ligne_precedente = 0;
-    int colonne = 0;
-    int color_swap = 1;
+
+    // 231 = pion bleu
+    // V = pion vert
+    // R = pion rouge
+    // J = pion jaune
 
 
-    // === GLOSSAIRE ===
-    /*
-     * f_h = fleche vers le haut
-     * f_b = fleche vers le bas
-     * f_d = fleche vers la droite
-     * f_g = fleche vers la gauche
-     *
-     * */
+    char *chaine_temp_init_plateau = NULL;
 
-    gotoligcol(0, 0);
+    for (int i = 0; i < 81; ++i)
+    {
 
-    for (int i = 0; i < 81; ++i) {
+        chaine_temp_init_plateau = malloc(11 * sizeof (char));
 
-        if (color_swap == 1 && strlen(plateau_de_jeu[i]) > 3) {
 
-            Color(15, 0);
-            color_swap = 0;
+        if (i  == 10)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
 
-        } else if (color_swap == 0 && strlen(plateau_de_jeu[i]) > 3) {
+            chaine_temp_init_plateau[4] = 231; /// pions  bleu
 
-            Color(8, 0);
-            color_swap = 1;
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
 
-        } else {
-
-            Color(10, 0);
-        }
-
-        gotoligcol(ligne, colonne);
-        strcpy(chaine_temp, plateau_de_jeu[i]);
-
-        if (strcmp(chaine_temp, "f_h") == 0) {
-
-            printf(" ");
-            printf(" ");
-            printf(" ");
-
-            ligne=ligne+1;
-            gotoligcol(ligne, colonne);
-
-            printf(" ");
-            printf("%c", 0x1E);
-            printf(" ");
-
-            ligne=ligne+1;
-            gotoligcol(ligne, colonne);
-
-            printf(" ");
-            printf(" ");
-            printf(" ");
-
-        } else if (strcmp(chaine_temp, "f_b") == 0) {
-
-            printf(" ");
-            printf(" ");
-            printf(" ");
-
-            ligne=ligne+1;
-            gotoligcol(ligne, colonne);
-
-            printf(" ");
-            printf("%c", 0x1F);
-            printf(" ");
-
-            ligne=ligne+1;
-            gotoligcol(ligne, colonne);
-
-            printf(" ");
-            printf(" ");
-            printf(" ");
-
-        } else if (strcmp(chaine_temp, "f_g") == 0) {
-
-            printf(" ");
-            printf(" ");
-            printf(" ");
-
-            ligne=ligne+1;
-            gotoligcol(ligne, colonne);
-
-            printf(" ");
-            printf("%c", 0x11);
-            printf(" ");
-
-            ligne=ligne+1;
-            gotoligcol(ligne, colonne);
-
-            printf(" ");
-            printf(" ");
-            printf(" ");
-
-        } else if (strcmp(chaine_temp, "f_d") == 0) {
-
-            printf(" ");
-            printf(" ");
-            printf(" ");
-
-            ligne=ligne+1;
-            gotoligcol(ligne, colonne);
-
-            printf(" ");
-            printf("%c", 0x10);
-            printf(" ");
-
-            ligne=ligne+1;
-            gotoligcol(ligne, colonne);
-
-            printf(" ");
-            printf(" ");
-            printf(" ");
-
-        } else {
-
-            for (int j = 0; j < 9; ++j) {
-
-                printf("%c", chaine_temp[j]);
-
-                if (j==2 || j==5 || j==8) {
-
-                    ligne = ligne + 1;
-                    gotoligcol(ligne, colonne);
-                }
-            }
         }
 
 
+        if (i  == 12)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
 
-        if ( i==8 || i==17 || i==26 || i==35 || i==44 || i==53 || i==62 || i==71 || i==80) {
+            chaine_temp_init_plateau[4] = 'C'; /// Cavalier
 
-            colonne = 0;
-            ligne_precedente = ligne_precedente + 3;
-
-        } else {
-
-            ligne = ligne_precedente;
-            colonne = colonne + 3;
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
         }
 
+
+        if(i == 14)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 'B'; /// Bougie
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+
+        if(i == 16)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 'V'; /// Pion vert
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+
+        if(i == 28)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 'E'; /// Epée
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+
+        if(i == 30)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 'e'; /// Emeraude
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+
+        if(i == 32)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 'f'; /// Coffre
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+
+        if(i == 34)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 'b'; /// Bague
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+
+        if(i == 46)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 'T'; /// Tete de mort/crane
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+
+        if(i == 48)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 'K'; /// Clé
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+
+        if(i == 50)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 128; /// Couronne
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+
+        if(i == 52)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 'c'; /// Carte au trésor
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+
+        if(i == 64)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 'J'; /// Pion Jaune
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+
+        if(i == 66)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 'S'; /// Sac de trésor
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+
+        if(i == 68)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 'L'; /// Livre
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
+
+
+        if(i == 70)
+        {
+            strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
+
+            chaine_temp_init_plateau[4] = 'R'; /// Pion Rouge
+
+            plateau_de_jeu[i] = chaine_temp_init_plateau;
+        }
 
     }
 
+    free(chaine_temp_init_plateau);
 
 
+    // === VARIABLES MENU ===
+    int choix = 0;
+    int alive = 1;
+
+
+    // === VARIABLES (NOUVELLE) PARTIE ===
+    t_joueur joueur1;
+    t_joueur joueur2;
+    t_joueur joueur3;
+    t_joueur joueur4;
+    t_joueur tableau_joueurs[4] = {joueur1, joueur2, joueur3, joueur4};
+    int nombre_joueurs = 0;
+    int init_partie = 1;
+    int notice = 1;
 
 
     while (alive) {
 
         if (choix == 0) {
 
-            system("cls");
             menu_principal(&choix);
 
         } else if (choix == 1) {
 
-<<<<<<< Updated upstream
-=======
             if (init_partie == 1) {
 
                 // === CREATION DE LA PARTIE ===
@@ -361,12 +405,19 @@ int main() {
 
                                 } else if (selecteur_interne == 3) {
 
-                                    chaine_temp[4] = 'S'; // Souris
+
+                               
+                                    chaine_temp[4] = 225; // Souris
+
                                     souris = 3;
 
                                 } else if (selecteur_interne == 4) {
 
-                                    chaine_temp[4] = 'L'; // Lézard
+
+                                    
+
+                                    chaine_temp[4] = 'l'; // Lézard
+
                                     lezard = 4;
 
                                 } else if (selecteur_interne == 5) {
@@ -533,6 +584,7 @@ int main() {
                 system("cls");
             }
 
+
             gotoligcol(0, 0);
 
             printf("\n");
@@ -555,7 +607,7 @@ int main() {
             afficher_plateau(plateau_de_jeu);
 
 
->>>>>>> Stashed changes
+
 
         } else if (choix == 2) {
 
@@ -571,10 +623,68 @@ int main() {
             Color(12, 0);
             printf("Merci d'avoir joue a Labyrinthe ! \n");
             alive = 0;
+
+        } else if (choix == 14082004) {
+
+            system("cls");
+
+            Color(10, 0);
+
+            printf("                                               ...:....                                             \n"
+                   "                                    .:      .^~~^:::...::.                          :~~^            \n"
+                   "           ^~^:                    .JY~.   ^?Y5Y?~:::...:^^.                        J??Y7  .:.      \n"
+                   "    ~!~:. :YJJY:                    :^^~!^!?JYYYPG5!^^^^!JY?.  :~!.                 7YY5J:7!!77     \n"
+                   "   .J7!?Y..5YY5:                        ^77J55BBYBG5?5BBBPJJ!:^^~~.                .J??J?!JJY57     \n"
+                   "    ^555Y7:Y7!77               .~.    .~!~~~~!7J77~^^^?5GG!J!^.   ^                7?77?J??YGJ~~^:  \n"
+                   ".~~^^JGJ777?!~~7:              ~G5JJY5BY??JYYY5GBPJ7~~~!!!~^::7YJPG?       .... .~7?777?7?JY5?!!Y7  \n"
+                   ".JJ7?YY5?!!~~~~~!^.          .:7BBPPG#BJY5PP5YJYPBBBGPPPYYJ7!~7##BGP^     ~J7!!77!7??7!777??JYY5^   \n"
+                   "  ~Y5J?J!~!!7!!!!~~~^..:^^:::.:7B#GG#&5J5PYPP5YJ?7777~^^^~JPY!JBBBGB?..   .!JJYYJ?77?J?77777JY55!7!^\n"
+                   "...:P5?~^~7?77?!!~~!7???!!!7?..!#BB###YJJJJB@#BG5Y7J!???YY7??!G##BBB?...... :7YJ??77?JJ?77?777JJYY??\n"
+                   "!!7?JJ!!!7?7??!~~~~7??JYJ7!~:..!B#&###PJJYJ?&@&&&&##PB#&#Y!!~!###BGG?:.:::::..:??7????7!777?7?YY7^^^\n"
+                   "JJJ5Y?~!77!77!!!!!!7?YJ!^:::.::J##&&&&#PYYJ?7G#BBBBGGB#5!!7!75##&###5^:^~~^^^^:7GPJJJ?77!777J?~.    \n"
+                   " ..:?J??7!7!~!?????YJ!^^~~~~~~!B&&#&&&&#GYYYJ7?JJYYY?7!7?7?Y5PB##B###7!77!!~~~755GG5JJJJ?JY5!.      \n"
+                   "     .?J???7?JY5Y5BBJ^~~!!7?775&&&&&&&&#&BYYYYYYYJJJY5PYJ5P55B#&#G#&&PJ???7777YPYYY555555P57:.      \n"
+                   "      ~?55YYY55PGBG557!77?JJ??#&&&&#&&&&&&#P5Y555555555PGY75#&&&#B#&&#5YYYJJ??J5YJJJJJJJJ?7~^       \n"
+                   "      ~!7Y55Y5PPP5555JJYJJJJ?J&&&&&#&&&&&&&&#BGP55555PP5YP#&&#&&&#&&&&7^:::^~7?YJJJJJJ????7^        \n"
+                   "       ^!7?JJJJJY555Y?~:    :G&&&##&&&&&&&&&&&&#BGGBBGB#&&&&&&&&&&#&&&         .:~!7??7!~:          \n"
+                   "        .^!7??J55YJ~.       ^&&&&#&&&&&&&&&&&&&&&##&GG#&&&&&&&&&&&&&&#                              \n"
+                   "            ..::..          ~&&&&&#&#&&#&&&&&&#5?7?GY^?#&&&&&&&&&&&&&J                              \n"
+                   "                             Y#####&&&&&&&&&&&5~^^~~~^!P#&&&&&&&&&&#G.                              \n"
+                   "                             !7?JJY5PP5PPPPP5Y!^::::^^~75PPPPPPYYJ??^                               \n"
+                   "                            .7777!!!77!~~~^^^:::...::^^~~~!!!!7!7!!~~.                              \n"
+                   "                             ~77!!!7~~^^::.:::::...::^^^^~~~!!77!!~~^                               \n"
+                   "                             .7777!!!~~~::.:::....:::::::^~~!!!!777!.                               \n"
+                   "                             .5J????77!!~^^^^^^::::::::^^~!!~!7777?~                                \n"
+                   "                             7YGG5JJJ???777!~~^^^^::::^~~~~!7??JYP5!.                               \n"
+                   "                            77!7JPGGP55YJJJJJ?77!!!!!!!!77JYY5PGG5?77:                              \n"
+                   "                           !?????JYYPGBBGGPPPP5555YYY5PPPGGGGPYYJ?JJ?7^                             \n"
+                   "                          7Y???JJYYJJJJY55PGGGG######BGGP55YYYYJJ??77?77                            \n"
+                   "                         :5JJJJYJJJYYYJJYYYYYYY55555555Y55555YJJ???YG###P.                          \n"
+                   "                        .G#GGP55YYYYYYYY55555555555555P55PPP5YY55B#####BB5                          \n"
+                   "                        P#B######BBBGY?JY555PPP5555P555YJ?!^::!5######BB#P                          \n"
+                   "                       7BGB#####&&#J^    ..::::^^^^::..        ^&##B####&~                          \n"
+                   "                       PGGB###&&5^                             J&######&5                           \n"
+                   "                     ^?GB#B####!                               :#######P                            \n"
+                   "                     Y@&####&G.                                .B#####B:                            \n"
+                   "                    ^#@@@&&&@!                                 G&&&&&&&#                            \n"
+                   "                  :P@@&&&&&&@?                                :&&&&&@@@&G                           \n"
+                   "                !B&&&&&&&&&#5.                               .&@&&&&@@&&&BJ^                        \n"
+                   "              7&&&&&&&&&&#!                                  !@@@&&&&&&&&&&&#P7.                    \n"
+                   "              ?##&&&&#BG?                                     :7YPG#&&@@&&&&&&&&G~                  \n"
+                   "                ..::..                                               .^?PB#&&&&&&B                  \n"
+                   "                                                                           ..:::. ");
+
+            Color(15, 0);
+            printf("\n");
+            printf("\n");
+            system("pause");
+
+            choix = 0;
         }
     }
 
     printf("\n");
+
 
     Color(15, 0);
     system("pause");
