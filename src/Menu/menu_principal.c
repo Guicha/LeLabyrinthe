@@ -73,7 +73,7 @@ void menu_principal(int *selection) {
         Color(15, 0);
         scanf("%d", selection);
 
-    } while ( (*selection != 1) && (*selection != 2) && (*selection != 3) && (*selection != 4));
+    } while ( (*selection != 1) && (*selection != 2) && (*selection != 3) && (*selection != 4) && (*selection != 14082004));
 
 }
 
