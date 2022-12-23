@@ -6,10 +6,6 @@ int main() {
     srand(time(NULL));
 
 
-
-    
-
-
     // === ICONES DE TRESORS ET POSITIONS ===
 
         char fleche_haut[11] = "f_h";
@@ -81,6 +77,7 @@ int main() {
     // === TABLEAU/SAC DE TUILES ===
     char sac_de_tuiles[10][11] = {"# ##  ###", "####  # #", "###  ## #", "# #  ####", "###   # #", "# ##  # #", "# #  ## #", "# #   ###", "# ## ## #", "###   ###"};
                                     //{tuile_L_1,         tuile_L_2,       tuile_L_3,     tuile_L_4,          tuile_T_1,      tuile_T_2,      tuile_T_3,       tuile_T_4,       tuile_I_1,       tuile_I_2}
+
 
 
     // === PLATEAU DE JEU ===
@@ -408,12 +405,19 @@ int main() {
 
                                 } else if (selecteur_interne == 3) {
 
+
+                               
                                     chaine_temp[4] = 225; // Souris
+
                                     souris = 3;
 
                                 } else if (selecteur_interne == 4) {
 
+
+                                    
+
                                     chaine_temp[4] = 'l'; // Lézard
+
                                     lezard = 4;
 
                                 } else if (selecteur_interne == 5) {
@@ -581,8 +585,27 @@ int main() {
             }
 
 
+            gotoligcol(0, 0);
+
+            printf("\n");
+
+            Color(3, 0);
+
+            printf("PARTIE DE ");
+
+            Color(12, 0);
+
+            printf("=== LABYRINTHE ===");
+
+            Color(3, 0);
+
+            printf(" => %d JOUEURS EN JEU !", nombre_joueurs);
+
+            Color(15, 0);
+
             // === AFFICHAGE DU PLATEAU ===
             afficher_plateau(plateau_de_jeu);
+
 
 
 

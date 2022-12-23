@@ -9,14 +9,32 @@ void afficher_plateau(char *plateau[81]) {
     // === VARIABLES DU PLATEAU DE JEU ===
     char chaine_temp[20];
 
-    int ligne = 0;
-    int ligne_precedente = 0;
-    int colonne = 0;
+
+    int ligne = LIGNE_DEFAUT;
+    int ligne_precedente = LIGNE_DEFAUT;
+    int colonne = COLONNE_DEFAUT;
+
+    int ligne_tuile_supp = LIGNE_DEFAUT + 3;
+    int colonne_tuile_supp = COLONNE_DEFAUT + 41;
+
     int color_swap = 1;
     int color_ligne = 0;
 
+    gotoligcol(LIGNE_DEFAUT-1, COLONNE_DEFAUT+4);
 
-    gotoligcol(0, 0);
+    Color(3, 0);
+
+    printf("= PLATEAU DE JEU =");
+
+    gotoligcol(LIGNE_DEFAUT-1, COLONNE_DEFAUT+ 30);
+
+    printf("= TUILE SUPPLEMENTAIRE =");
+
+    Color(15, 0);
+
+
+    gotoligcol(LIGNE_DEFAUT, COLONNE_DEFAUT);
+
 
     for (int i = 0; i < 81; ++i) {
 
@@ -142,13 +160,22 @@ void afficher_plateau(char *plateau[81]) {
 
             for (int j = 0; j < 9; ++j) {
 
-                printf("%c", chaine_temp[j]);
+                if (i == 71) {
 
-                if (j==2 || j==5 || j==8) {
+                    // pass
 
-                    ligne = ligne + 1;
-                    gotoligcol(ligne, colonne);
+                } else {
+
+                    printf("%c", chaine_temp[j]);
+
+                    if (j==2 || j==5 || j==8) {
+
+                        ligne = ligne + 1;
+                        gotoligcol(ligne, colonne);
+                    }
+
                 }
+
             }
         }
 
@@ -156,7 +183,8 @@ void afficher_plateau(char *plateau[81]) {
 
         if ( i==8 || i==17 || i==26 || i==35 || i==44 || i==53 || i==62 || i==71 || i==80) {
 
-            colonne = 0;
+            colonne = COLONNE_DEFAUT;
+
             ligne_precedente = ligne_precedente + 3;
 
             if (color_ligne == 0) {
@@ -177,6 +205,23 @@ void afficher_plateau(char *plateau[81]) {
 
 
     }
+
+    gotoligcol(ligne_tuile_supp, colonne_tuile_supp);
+    strcpy(chaine_temp, plateau[71]);
+
+    for (int i=0; i<9; i++) {
+
+        printf("%c", chaine_temp[i]);
+
+        if (i==2 || i==5 || i==8) {
+
+            ligne_tuile_supp = ligne_tuile_supp + 1;
+            gotoligcol(ligne_tuile_supp, colonne_tuile_supp);
+        }
+    }
+
+    gotoligcol(ligne, 0);
+
 
     printf("\n");
     printf("\n");

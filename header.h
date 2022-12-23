@@ -13,9 +13,17 @@
 #include <dirent.h> // Pour parcourir les fichiers d'un dossier
 
 // === CONSTANTES ===
+
 #define TAILLE_PSEUDO_JOUEUR 24
+#define LIGNE_DEFAUT 4
+#define COLONNE_DEFAUT 10
+
+// === PROGRAMMES DE COULEUR ===
+void Color(int couleurDuTexte,int couleurDeFond);
 
 
+// === PROGRAMMES DE CURSEUR ===
+void gotoligcol( int lig, int col );
 
 
 // === STRUCTURES ===
