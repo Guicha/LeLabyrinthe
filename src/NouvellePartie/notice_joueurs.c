@@ -20,6 +20,15 @@ void notice_joueurs() {
 
     printf(" \n");
     printf("\n");
+
+    Color(12, 0);
+
+    printf("/!\\ Pour un affichage optimal, merci d'agrandir entierement la fenetre de la console /!\\ \n");
+
+    Color(15, 0);
+
+    printf(" \n");
+    printf("\n");
     printf("\n");
 
     system("pause");

@@ -79,6 +79,8 @@ int main() {
                                     //{tuile_L_1,         tuile_L_2,       tuile_L_3,     tuile_L_4,          tuile_T_1,      tuile_T_2,      tuile_T_3,       tuile_T_4,       tuile_I_1,       tuile_I_2}
 
 
+    char sac_de_tresors[24] = {'C', 'B', 'E', 'e', 'f', 'b', 'T', 'K', 128, 'c', 'S', 'L', 2, 'I', 'H', 225, 'l', 's', 'F', 'M', 'N', 'E', 'C', 'D'};
+
 
     // === PLATEAU DE JEU ===
     char *plateau_de_jeu[81] = {tuile_esp, tuile_esp, fleche_bas, tuile_esp, fleche_bas, tuile_esp, fleche_bas, tuile_esp, tuile_esp,
@@ -113,6 +115,7 @@ int main() {
 
     char *chaine_temp_init_plateau = NULL;
 
+    // === GENERATION DES TRESORS ET POSITIONS DE DEPART DES TUILES FIXES ===
     for (int i = 0; i < 81; ++i)
     {
 
@@ -300,6 +303,8 @@ int main() {
     int notice = 1;
 
 
+
+
     while (alive) {
 
         if (choix == 0) {
@@ -311,9 +316,11 @@ int main() {
             if (init_partie == 1) {
 
                 // === CREATION DE LA PARTIE ===
-                //creer_partie(&choix, &nombre_joueurs, tableau_joueurs);
+                creer_partie(&choix, &nombre_joueurs, tableau_joueurs);
 
-                // === INITIALISATION DU PLATEAU ===
+                // === INITIALISATION DU PLATEAU (GENERATION DES TRESORS ET DES TUILES ALEATOIRES) ===
+
+
                 //init_plateau(plateau_de_jeu, sac_de_tuiles);
 
                                 // === INITIALISATION DU TABLEAU AVEC DE L'ALEATOIRE ===
@@ -569,7 +576,11 @@ int main() {
 
                 free(chaine_temp);
 
-                init_partie = 1;
+                // === DISTRIBUTION DES TRESORS ===
+
+                
+
+                init_partie = 0;
 
             }
 
