@@ -105,7 +105,14 @@ int main() {
     // L = Livre
     // K = Clé
     // c = Carte
-    // 128 ²&"= couronne
+    // 128 = couronne
+
+
+    // 231 = pion bleu
+    // V = pion vert
+    // R = pion rouge
+    // J = pion jaune
+
 
     char *chaine_temp_init_plateau = NULL;
 
@@ -119,7 +126,7 @@ int main() {
         {
             strcpy(chaine_temp_init_plateau, plateau_de_jeu[i]);
 
-            chaine_temp_init_plateau[4] = 231;
+            chaine_temp_init_plateau[4] = 231; /// pions  bleu
 
             plateau_de_jeu[i] = chaine_temp_init_plateau;
 
@@ -401,12 +408,12 @@ int main() {
 
                                 } else if (selecteur_interne == 3) {
 
-                                    chaine_temp[4] = 'S'; // Souris
+                                    chaine_temp[4] = 225; // Souris
                                     souris = 3;
 
                                 } else if (selecteur_interne == 4) {
 
-                                    chaine_temp[4] = 'L'; // Lézard
+                                    chaine_temp[4] = 'l'; // Lézard
                                     lezard = 4;
 
                                 } else if (selecteur_interne == 5) {
