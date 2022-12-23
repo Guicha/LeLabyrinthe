@@ -227,6 +227,6 @@ void afficher_plateau(char *plateau[81]) {
     printf("\n");
 
 
-    system("pause");
+    //system("pause");
 
 }

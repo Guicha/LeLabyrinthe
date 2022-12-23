@@ -21,7 +21,6 @@
 // === PROGRAMMES DE COULEUR ===
 void Color(int couleurDuTexte,int couleurDeFond);
 
-
 // === PROGRAMMES DE CURSEUR ===
 void gotoligcol( int lig, int col );
 
@@ -31,18 +30,11 @@ typedef struct carte_joueur {
 
     char pseudo[TAILLE_PSEUDO_JOUEUR];
     int pion;
+    char tresors[12];
+    int score;
 
 } t_joueur;
 
-
-
-
-
-// === PROGRAMMES DE COULEUR ===
-void Color(int couleurDuTexte, int couleurDeFond);
-
-// === PROGRAMMES DE CURSEUR ===
-void gotoligcol(int lig, int col);
 
 // === MENU ===
 void menu_principal(int *selection);
@@ -55,6 +47,7 @@ void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]);
 void afficher_plateau(char *plateau[81]);
 void init_plateau(char *plateau[81], char *tab_tuiles[10]);
 void notice_joueurs();
+
 
 
 
