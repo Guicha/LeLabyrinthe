@@ -1,4 +1,5 @@
 # ninja log v5
+<<<<<<< Updated upstream
 3	853	6932521364601447	CMakeFiles/Projet_semestre_1.dir/main.c.obj	152d329dc563af0d
 854	965	6932521365684301	Projet_semestre_1.exe	6f2ca1b5454de2ed
 2	325	6932530343344559	build.ninja	9e2309411bd752b4
@@ -9,3 +10,20 @@
 26	3219	6932462370814723	CMakeFiles/Projet_semestre_1.dir/src/Menu/consulter_sauvegardes.c.obj	861039bc49b6eda9
 41	3190	6932462370521263	CMakeFiles/Projet_semestre_1.dir/header.c.obj	57caebf133057da9
 35	3200	6932462370572441	CMakeFiles/Projet_semestre_1.dir/src/Menu/cursor.c.obj	ae8585179ae4bdc9
+=======
+4	3498	6935096197629813	CMakeFiles/Projet_semestre_1.dir/main.c.obj	152d329dc563af0d
+1032	1173	6935100594587402	Projet_semestre_1.exe	888a7eae9385f64a
+9	3477	6935096197355132	CMakeFiles/Projet_semestre_1.dir/src/Menu/menu_principal.c.obj	dd1cf5733404d8e6
+14	522	6935077861419075	build.ninja	38d3240b9a7dfffa
+19	3476	6935096197395606	CMakeFiles/Projet_semestre_1.dir/src/Menu/menu_ingame.c.obj	a239575839bcfb01
+31	3503	6935096197650201	CMakeFiles/Projet_semestre_1.dir/src/Menu/credits-regles.c.obj	c1b0440cccc184ef
+25	3467	6935096197328400	CMakeFiles/Projet_semestre_1.dir/src/Menu/consulter_sauvegardes.c.obj	861039bc49b6eda9
+14	3459	6935096197268514	CMakeFiles/Projet_semestre_1.dir/src/Menu/color.c.obj	5a3879541491eb2e
+3461	4485	6935096207627075	CMakeFiles/Projet_semestre_1.dir/src/Menu/cursor.c.obj	ae8585179ae4bdc9
+37	3523	6935096197942166	CMakeFiles/Projet_semestre_1.dir/src/NouvellePartie/creer_partie.c.obj	eb7784b84358518a
+53	3512	6935096197801204	CMakeFiles/Projet_semestre_1.dir/src/NouvellePartie/init_plateau.c.obj	80b708b6d92822a9
+3	1032	6935100593215692	CMakeFiles/Projet_semestre_1.dir/src/NouvellePartie/afficher_plateau.c.obj	cfaa38577115dbee
+3467	4467	6935096207425565	CMakeFiles/Projet_semestre_1.dir/src/NouvellePartie/notice_joueurs.c.obj	6d7108df066ba949
+3	882	6935100988439158	CMakeFiles/Projet_semestre_1.dir/src/NouvellePartie/afficher_plateau.c.obj	cfaa38577115dbee
+883	1030	6935100989920827	Projet_semestre_1.exe	888a7eae9385f64a
+>>>>>>> Stashed changes

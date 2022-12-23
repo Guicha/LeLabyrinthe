@@ -15,8 +15,13 @@
 // === PROGRAMMES DE COULEUR ===
 void Color(int couleurDuTexte,int couleurDeFond);
 
+<<<<<<< Updated upstream
 // === PROGRAMMES DE CURSEUR ===
 void gotoligcol( int lig, int col );
+=======
+#define LIGNE_DEFAUT 4
+#define COLONNE_DEFAUT 10
+>>>>>>> Stashed changes
 
 // === MENU ===
 void menu_principal(int *selection);
