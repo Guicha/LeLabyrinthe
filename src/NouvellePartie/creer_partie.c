@@ -141,6 +141,8 @@ void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]) {
 
     printf("\n");
 
+    // === ATTRIBUTION DES PSEUDO ===
+
     for (int i=0; i<*nb_joueurs; i++) {
 
         printf("Merci de saisir le pseudo du ");
@@ -164,7 +166,7 @@ void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]) {
                 fflush(stdin);
                 gets(tab_joueurs[0].pseudo);
 
-            } while (strlen(tab_joueurs[0].pseudo) > TAILLE_PSEUDO_JOUEUR);
+            } while (strlen(tab_joueurs[0].pseudo) > TAILLE_PSEUDO_JOUEUR || strlen(tab_joueurs[0].pseudo) < 1);
 
             printf("\n");
 
@@ -190,7 +192,7 @@ void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]) {
                 gets(tab_joueurs[1].pseudo);
 
 
-            } while ((strcmp(tab_joueurs[0].pseudo, tab_joueurs[1].pseudo) == 0) || (strlen(tab_joueurs[1].pseudo) > TAILLE_PSEUDO_JOUEUR));
+            } while ((strcmp(tab_joueurs[0].pseudo, tab_joueurs[1].pseudo) == 0) || (strlen(tab_joueurs[1].pseudo) > TAILLE_PSEUDO_JOUEUR) || strlen(tab_joueurs[1].pseudo) < 1);
 
             printf("\n");
 
@@ -213,7 +215,7 @@ void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]) {
                 fflush(stdin);
                 gets(tab_joueurs[2].pseudo);
 
-            } while (((strcmp(tab_joueurs[0].pseudo, tab_joueurs[2].pseudo) == 0) || (strcmp(tab_joueurs[1].pseudo, tab_joueurs[2].pseudo) == 0)) || (strlen(tab_joueurs[2].pseudo) > TAILLE_PSEUDO_JOUEUR));
+            } while (((strcmp(tab_joueurs[0].pseudo, tab_joueurs[2].pseudo) == 0) || (strcmp(tab_joueurs[1].pseudo, tab_joueurs[2].pseudo) == 0)) || (strlen(tab_joueurs[2].pseudo) > TAILLE_PSEUDO_JOUEUR) || strlen(tab_joueurs[2].pseudo) < 1);
 
             printf("\n");
 
@@ -239,7 +241,7 @@ void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]) {
                 gets(tab_joueurs[3].pseudo);
 
 
-            } while (((strcmp(tab_joueurs[0].pseudo, tab_joueurs[3].pseudo) == 0) || (strcmp(tab_joueurs[1].pseudo, tab_joueurs[3].pseudo) == 0) || (strcmp(tab_joueurs[2].pseudo, tab_joueurs[3].pseudo) == 0)) || (strlen(tab_joueurs[3].pseudo) > TAILLE_PSEUDO_JOUEUR));
+            } while (((strcmp(tab_joueurs[0].pseudo, tab_joueurs[3].pseudo) == 0) || (strcmp(tab_joueurs[1].pseudo, tab_joueurs[3].pseudo) == 0) || (strcmp(tab_joueurs[2].pseudo, tab_joueurs[3].pseudo) == 0)) || (strlen(tab_joueurs[3].pseudo) > TAILLE_PSEUDO_JOUEUR) || strlen(tab_joueurs[3].pseudo) < 1);
 
             printf("\n");
 

@@ -79,7 +79,7 @@ int main() {
                                     //{tuile_L_1,         tuile_L_2,       tuile_L_3,     tuile_L_4,          tuile_T_1,      tuile_T_2,      tuile_T_3,       tuile_T_4,       tuile_I_1,       tuile_I_2}
 
 
-    char sac_de_tresors[24] = {'C', 'B', 'E', 'e', 'f', 'b', 'T', 'K', 128, 'c', 'S', 'L', 2, 'I', 'H', 225, 'l', 's', 'F', 'M', 'N', 'E', 'C', 'D'};
+    char sac_de_tresors[24] = {'C', 'B', 'E', 'e', 'f', 'b', 'T', 'K', 128, 'c', 'S', 'L', 2, 'I', 'H', 225, 'l', 's', 'F', 'M', 'N', 'W', 'X', 'D'};
 
 
     // === PLATEAU DE JEU ===
@@ -299,8 +299,11 @@ int main() {
     t_joueur joueur4;
     t_joueur tableau_joueurs[4] = {joueur1, joueur2, joueur3, joueur4};
     int nombre_joueurs = 0;
+    int nombre_tresors_joueurs = 0;
     int init_partie = 1;
     int notice = 1;
+    int remise_tresors[24] = {99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99};
+    int selecteur_tresor_aleatoire = 0;
 
 
 
@@ -309,12 +312,26 @@ int main() {
 
         if (choix == 0) {
 
+            init_partie = 1;
+            notice = 1;
+
+            for (int i=0; i<24; i++) {
+
+                remise_tresors[i] = 99;
+            }
+
+            for (int i=0; i<4; i++) {
+
+                tableau_joueurs[i].score = 0;
+            }
+
             menu_principal(&choix);
 
         } else if (choix == 1) {
 
             if (init_partie == 1) {
 
+                // === CREATION DE LA PARTIE ET INITIALISATION DU PLATEAU ===
                 // === CREATION DE LA PARTIE ===
                 creer_partie(&choix, &nombre_joueurs, tableau_joueurs);
 
@@ -337,6 +354,8 @@ int main() {
                  * */
 
                 int i;
+                int j;
+                int k;
                 int selecteur_aleatoire;
                 int selecteur_interne;
                 int selecteur_incrementation = 0;
@@ -486,12 +505,12 @@ int main() {
 
                             } else if (selecteur_interne == 3) {
 
-                                chaine_temp[4] = 'E'; // Esprit
+                                chaine_temp[4] = 'W'; // Esprit
                                 esprit = 3;
 
                             } else if (selecteur_interne == 4) {
 
-                                chaine_temp[4] = 'C'; // Chauvesouris
+                                chaine_temp[4] = 'X'; // Chauvesouris
                                 chauvesouris = 4;
 
                             } else if (selecteur_interne == 5) {
@@ -577,8 +596,33 @@ int main() {
                 free(chaine_temp);
 
                 // === DISTRIBUTION DES TRESORS ===
+                nombre_tresors_joueurs = 24 / nombre_joueurs;
 
-                
+
+                for (i=0; i<nombre_joueurs; i++) {
+
+                    for (j=0; j<nombre_tresors_joueurs; j++) {
+
+                        do {
+
+                            selecteur_tresor_aleatoire = rand() % (23 - 0 + 1) + 0;
+
+                        } while (selecteur_tresor_aleatoire == remise_tresors[selecteur_tresor_aleatoire]);
+
+                        remise_tresors[selecteur_tresor_aleatoire] = selecteur_tresor_aleatoire;
+
+                        tableau_joueurs[i].tresors[j] = sac_de_tresors[selecteur_tresor_aleatoire];
+
+                    }
+
+                    for (j=nombre_tresors_joueurs; j<12; j++) {
+
+                        tableau_joueurs[i].tresors[j] = NULL;
+                    }
+
+                }
+
+                afficher_tab_struct_joueurs(tableau_joueurs, nombre_joueurs);
 
                 init_partie = 0;
 
@@ -616,6 +660,8 @@ int main() {
 
             // === AFFICHAGE DU PLATEAU ===
             afficher_plateau(plateau_de_jeu);
+
+            system("pause");
 
 
 
