@@ -164,6 +164,99 @@ void afficher_plateau(char *plateau[81]) {
 
                     // pass
 
+                } else if (i == 10) {
+
+                    if (j == 4) {
+
+                        Color(1, 0);
+
+                        printf("%c", chaine_temp[j]);
+
+                        Color(5, 0);
+
+                    } else {
+
+                        printf("%c", chaine_temp[j]);
+
+                    }
+
+
+                    if (j==2 || j==5 || j==8) {
+
+                        ligne = ligne + 1;
+                        gotoligcol(ligne, colonne);
+                    }
+
+
+                } else if (i == 16) {
+
+                    if (j == 4) {
+
+                        Color(2, 0);
+
+                        printf("%c", chaine_temp[j]);
+
+                        Color(5, 0);
+
+                    } else {
+
+                        printf("%c", chaine_temp[j]);
+
+                    }
+
+
+                    if (j==2 || j==5 || j==8) {
+
+                        ligne = ligne + 1;
+                        gotoligcol(ligne, colonne);
+                    }
+
+                } else if (i == 64) {
+
+                    if (j == 4) {
+
+                        Color(14, 0);
+
+                        printf("%c", chaine_temp[j]);
+
+                        Color(5, 0);
+
+                    } else {
+
+                        printf("%c", chaine_temp[j]);
+
+                    }
+
+
+                    if (j==2 || j==5 || j==8) {
+
+                        ligne = ligne + 1;
+                        gotoligcol(ligne, colonne);
+                    }
+
+                } else if (i == 70) {
+
+                    if (j == 4) {
+
+                        Color(12, 0);
+
+                        printf("%c", chaine_temp[j]);
+
+                        Color(5, 0);
+
+                    } else {
+
+                        printf("%c", chaine_temp[j]);
+
+                    }
+
+
+                    if (j==2 || j==5 || j==8) {
+
+                        ligne = ligne + 1;
+                        gotoligcol(ligne, colonne);
+                    }
+
                 } else {
 
                     printf("%c", chaine_temp[j]);
