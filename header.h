@@ -15,7 +15,7 @@
 // === CONSTANTES ===
 
 #define TAILLE_PSEUDO_JOUEUR 24
-#define LIGNE_DEFAUT 4
+#define LIGNE_DEFAUT 5
 #define COLONNE_DEFAUT 10
 
 // === PROGRAMMES DE COULEUR ===
@@ -47,6 +47,7 @@ void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]);
 void afficher_plateau(char *plateau[81]);
 void init_plateau(char *plateau[81], char *tab_tuiles[10]);
 void notice_joueurs();
+void options_joueur(t_joueur joueur_actuel, int num_joueur);
 
 // === TESTING ===
 void afficher_tab_struct_joueurs(t_joueur tab[4], int nb_joueurs);
