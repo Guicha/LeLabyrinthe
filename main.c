@@ -720,6 +720,12 @@ int main() {
             // === AFFICHAGE DES OPTIONS ===
             options_joueur(joueur_en_cours, index_joueur_en_cours, &ligne_a_coulisser);
 
+            // Implémenter un sous-programme pour faire coulisser les lignes/colonnes
+
+            // Sous-programme pour déplacer le joueur (faire attention aux murs etc)
+
+            // Sous-programme pour compter les tresors s'il y a
+
             printf("\n");
             system("pause");
 
