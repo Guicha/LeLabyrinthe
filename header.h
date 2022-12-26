@@ -32,6 +32,7 @@ typedef struct carte_joueur {
     int pion;
     char tresors[12];
     int score;
+    int couleur;
 
 } t_joueur;
 
@@ -47,7 +48,7 @@ void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]);
 void afficher_plateau(char *plateau[81]);
 void init_plateau(char *plateau[81], char *tab_tuiles[10]);
 void notice_joueurs();
-void options_joueur(t_joueur joueur_actuel, int num_joueur);
+void options_joueur(t_joueur joueur_actuel, int num_joueur, int *coulisser);
 
 // === TESTING ===
 void afficher_tab_struct_joueurs(t_joueur tab[4], int nb_joueurs);

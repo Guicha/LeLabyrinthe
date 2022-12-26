@@ -33,6 +33,10 @@ void afficher_tab_struct_joueurs(t_joueur tab[4], int nb_joueurs) {
         printf("Le score est de: %d", tab[i].score);
 
         printf("\n");
+
+        printf("La couleur est: %d", tab[i].couleur);
+
+        printf("\n");
         printf("\n");
     }
 

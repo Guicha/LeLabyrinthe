@@ -307,6 +307,7 @@ int main() {
     int nombre_tresors_joueurs = 0;
     int remise_tresors[24] = {99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99};
     int selecteur_tresor_aleatoire = 0;
+    int ligne_a_coulisser = 99;
 
 
 
@@ -627,11 +628,54 @@ int main() {
 
                 afficher_tab_struct_joueurs(tableau_joueurs, nombre_joueurs);
 
+
                 // === DESIGNATION ALEATOIRE DU JOUEUR COMMENCANT LA PARTIE ===
                 selecteur_aleatoire = rand() % ((nombre_joueurs-1) - 0 + 1) + 0;
 
                 joueur_en_cours = tableau_joueurs[selecteur_aleatoire];
                 index_joueur_en_cours = selecteur_aleatoire;
+
+                // === SPAWN DES JOUEURS SUR LES CASES ATTITREES ===
+                for (i=0; i<nombre_joueurs; i++) {
+
+                    chaine_temp = malloc(11 * sizeof (char));
+
+                    if (tableau_joueurs[i].pion == 36) {
+
+                        strcpy(chaine_temp, plateau_de_jeu[70]);
+
+                        chaine_temp[4] = tableau_joueurs[i].pion;
+
+                        plateau_de_jeu[70] = chaine_temp;
+
+                    } else if (tableau_joueurs[i].pion == 156) {
+
+                        strcpy(chaine_temp, plateau_de_jeu[10]);
+
+                        chaine_temp[4] = tableau_joueurs[i].pion;
+
+                        plateau_de_jeu[10] = chaine_temp;
+
+                    } else if (tableau_joueurs[i].pion == 157) {
+
+                        strcpy(chaine_temp, plateau_de_jeu[16]);
+
+                        chaine_temp[4] = tableau_joueurs[i].pion;
+
+                        plateau_de_jeu[16] = chaine_temp;
+
+                    } else if (tableau_joueurs[i].pion == 190) {
+
+                        strcpy(chaine_temp, plateau_de_jeu[64]);
+
+                        chaine_temp[4] = tableau_joueurs[i].pion;
+
+                        plateau_de_jeu[64] = chaine_temp;
+
+                    }
+                }
+
+                free(chaine_temp);
 
                 init_partie = 0;
 
@@ -674,7 +718,7 @@ int main() {
             afficher_plateau(plateau_de_jeu);
 
             // === AFFICHAGE DES OPTIONS ===
-            options_joueur(joueur_en_cours, index_joueur_en_cours);
+            options_joueur(joueur_en_cours, index_joueur_en_cours, &ligne_a_coulisser);
 
             printf("\n");
             system("pause");

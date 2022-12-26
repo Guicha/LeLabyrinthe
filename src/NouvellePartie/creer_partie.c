@@ -54,35 +54,10 @@ void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]) {
 
     for (int i=1; i<*nb_joueurs+1; i++)
     {
-        printf("Choissisez le pion du ");
-
-        if (i==1) {
-
-            Color(12, 0);
-
-            printf("joueur %d", i);
-
-        } else if (i==2) {
-
-            Color(1, 0);
-
-            printf("joueur %d", i);
-
-        } else if (i==3) {
-
-            Color(2, 0);
-
-            printf("joueur %d", i);
-
-        } else if (i==4) {
-
-            Color(14, 0);
-
-            printf("joueur %d", i);
-
-        }
 
         Color(15, 0);
+
+        printf("Choissisez le pion du joueur %d", i);
 
         printf(" : \n");
 
@@ -90,7 +65,27 @@ void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]) {
 
         for (int j = 0; j < nb_pions; j++)
         {
+            if (liste_pion[j] == 36) {
+
+                Color(12, 0);
+
+            } else if (liste_pion[j] == 156) {
+
+                Color(1, 0);
+
+            } else if (liste_pion[j] == 157) {
+
+                Color(2, 0);
+
+
+            } else if (liste_pion[j] == 190) {
+
+                Color(14, 0);
+            }
+
             printf("%d) %c \n", j+1, liste_pion[j]);
+
+
         }
 
         printf("\n");
@@ -104,7 +99,7 @@ void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]) {
             Color(15, 0);
             scanf("%d",&choix_pion);
 
-        }while( (choix_pion > nb_pions) || (choix_pion < 1) ); // Blindage de la saisie
+        } while( (choix_pion > nb_pions) || (choix_pion < 1) ); // Blindage de la saisie
 
         choix_pion -= 1;
 
@@ -113,18 +108,92 @@ void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]) {
         if (i == 1)
         {
             tab_joueurs[0].pion = liste_pion[choix_pion];
+
+            if (liste_pion[choix_pion] == 36) {
+
+                tab_joueurs[0].couleur = 12;
+
+            } else if (liste_pion[choix_pion] == 156) {
+
+                tab_joueurs[0].couleur = 1;
+
+            } else if (liste_pion[choix_pion] == 157) {
+
+                tab_joueurs[0].couleur = 2;
+
+
+            } else if (liste_pion[choix_pion] == 190) {
+
+                tab_joueurs[0].couleur = 14;
+            }
+
         }
         else if ( i == 2)
         {
             tab_joueurs[1].pion = liste_pion[choix_pion];
+
+            if (liste_pion[choix_pion] == 36) {
+
+                tab_joueurs[1].couleur = 12;
+
+            } else if (liste_pion[choix_pion] == 156) {
+
+                tab_joueurs[1].couleur = 1;
+
+            } else if (liste_pion[choix_pion] == 157) {
+
+                tab_joueurs[1].couleur = 2;
+
+
+            } else if (liste_pion[choix_pion] == 190) {
+
+                tab_joueurs[1].couleur = 14;
+            }
         }
         else if ( i == 3)
         {
             tab_joueurs[2].pion = liste_pion[choix_pion];
+
+            if (liste_pion[choix_pion] == 36) {
+
+                tab_joueurs[2].couleur = 12;
+
+            } else if (liste_pion[choix_pion] == 156) {
+
+                tab_joueurs[2].couleur = 1;
+
+            } else if (liste_pion[choix_pion] == 157) {
+
+                tab_joueurs[2].couleur = 2;
+
+
+            } else if (liste_pion[choix_pion] == 190) {
+
+                tab_joueurs[2].couleur = 14;
+            }
         }
         else if ( i == 4)
         {
             tab_joueurs[3].pion = liste_pion[choix_pion];
+
+            if (liste_pion[choix_pion] == 36) {
+
+                tab_joueurs[3].couleur = 12;
+
+            } else if (liste_pion[choix_pion] == 156) {
+
+                tab_joueurs[3].couleur = 1;
+
+            } else if (liste_pion[choix_pion] == 157) {
+
+                tab_joueurs[3].couleur = 2;
+
+
+            } else if (liste_pion[choix_pion] == 190) {
+
+                tab_joueurs[3].couleur = 14;
+            }
+
         }
 
         // === REDUCTION DE LA LISTE DE PIONS ===
@@ -149,7 +218,7 @@ void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]) {
 
         if (i == 0) {
 
-            Color(12, 0);
+            Color(tab_joueurs[i].couleur, 0);
             printf("joueur %d", i+1);
             Color(15, 0);
 
@@ -173,7 +242,7 @@ void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]) {
 
         } else if (i == 1) {
 
-            Color(1, 0);
+            Color(tab_joueurs[i].couleur, 0);
             printf("joueur %d", i+1);
             Color(15, 0);
 
@@ -198,7 +267,7 @@ void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]) {
 
         } else if (i == 2) {
 
-            Color(2, 0);
+            Color(tab_joueurs[i].couleur, 0);
             printf("joueur %d", i+1);
             Color(15, 0);
 
@@ -222,7 +291,7 @@ void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]) {
 
         } else if (i == 3) {
 
-            Color(14, 0);
+            Color(tab_joueurs[i].couleur, 0);
             printf("joueur %d", i+1);
             Color(15, 0);
 

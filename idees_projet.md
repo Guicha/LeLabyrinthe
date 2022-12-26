@@ -8,5 +8,5 @@ TODO
 - ~~Blinder la saisie du pseudo des joueurs~~
 - ~~Colorer les icones d'apparition des joueurs sur le plateau~~
 - ~~Faire l'attribution aléatoire des trésors aux différents joueurs~~
-- Faire un menu secret pour rentrer un srand personnalisé
+- ~~Faire un menu secret pour rentrer un srand personnalisé~~
 
