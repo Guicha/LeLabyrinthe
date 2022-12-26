@@ -20,13 +20,13 @@ void afficher_plateau(char *plateau[81]) {
     int color_swap = 1;
     int color_ligne = 0;
 
-    gotoligcol(LIGNE_DEFAUT-1, COLONNE_DEFAUT+4);
+    gotoligcol(LIGNE_DEFAUT-2, COLONNE_DEFAUT+4);
 
     Color(3, 0);
 
     printf("= PLATEAU DE JEU =");
 
-    gotoligcol(LIGNE_DEFAUT-1, COLONNE_DEFAUT+ 30);
+    gotoligcol(LIGNE_DEFAUT-2, COLONNE_DEFAUT+ 30);
 
     printf("= TUILE SUPPLEMENTAIRE =");
 
@@ -76,7 +76,7 @@ void afficher_plateau(char *plateau[81]) {
         gotoligcol(ligne, colonne);
         strcpy(chaine_temp, plateau[i]);
 
-        if (strcmp(chaine_temp, "f_h") == 0) {
+        if (strcmp(chaine_temp, "f_h") == 0) { // Fleche vers le haut
 
             printf(" ");
             printf(" ");
@@ -96,7 +96,7 @@ void afficher_plateau(char *plateau[81]) {
             printf(" ");
             printf(" ");
 
-        } else if (strcmp(chaine_temp, "f_b") == 0) {
+        } else if (strcmp(chaine_temp, "f_b") == 0) { // Fleche vers le bas
 
             printf(" ");
             printf(" ");
@@ -116,7 +116,7 @@ void afficher_plateau(char *plateau[81]) {
             printf(" ");
             printf(" ");
 
-        } else if (strcmp(chaine_temp, "f_g") == 0) {
+        } else if (strcmp(chaine_temp, "f_g") == 0) { // Fleche de gauche
 
             printf(" ");
             printf(" ");
@@ -136,7 +136,7 @@ void afficher_plateau(char *plateau[81]) {
             printf(" ");
             printf(" ");
 
-        } else if (strcmp(chaine_temp, "f_d") == 0) {
+        } else if (strcmp(chaine_temp, "f_d") == 0) { // Fleche de droite
 
             printf(" ");
             printf(" ");
@@ -158,6 +158,7 @@ void afficher_plateau(char *plateau[81]) {
 
         } else {
 
+            // Affichage des tuiles
             for (int j = 0; j < 9; ++j) {
 
                 if (i == 71) {
@@ -273,7 +274,7 @@ void afficher_plateau(char *plateau[81]) {
         }
 
 
-
+        // Saut de ligne en bout de ligne et changement de couleur
         if ( i==8 || i==17 || i==26 || i==35 || i==44 || i==53 || i==62 || i==71 || i==80) {
 
             colonne = COLONNE_DEFAUT;
@@ -299,6 +300,7 @@ void afficher_plateau(char *plateau[81]) {
 
     }
 
+    // Affichage de la tuile supplémentaire
     gotoligcol(ligne_tuile_supp, colonne_tuile_supp);
     strcpy(chaine_temp, plateau[71]);
 
@@ -313,6 +315,47 @@ void afficher_plateau(char *plateau[81]) {
         }
     }
 
+    // Affichage des numeros des colonnes et lignes
+    Color(10, 0);
+
+    gotoligcol(LIGNE_DEFAUT, COLONNE_DEFAUT+7);
+    printf("1");
+
+    gotoligcol(LIGNE_DEFAUT, COLONNE_DEFAUT+13);
+    printf("2");
+
+    gotoligcol(LIGNE_DEFAUT, COLONNE_DEFAUT+19);
+    printf("3");
+
+    gotoligcol(LIGNE_DEFAUT+7, COLONNE_DEFAUT+27);
+    printf("4");
+
+    gotoligcol(LIGNE_DEFAUT+13, COLONNE_DEFAUT+27);
+    printf("5");
+
+    gotoligcol(LIGNE_DEFAUT+19, COLONNE_DEFAUT+27);
+    printf("6");
+
+    gotoligcol(LIGNE_DEFAUT+26, COLONNE_DEFAUT+19);
+    printf("7");
+
+    gotoligcol(LIGNE_DEFAUT+26, COLONNE_DEFAUT+13);
+    printf("8");
+
+    gotoligcol(LIGNE_DEFAUT+26, COLONNE_DEFAUT+7);
+    printf("9");
+
+    gotoligcol(LIGNE_DEFAUT+19, COLONNE_DEFAUT-2);
+    printf("10");
+
+    gotoligcol(LIGNE_DEFAUT+13, COLONNE_DEFAUT-2);
+    printf("11");
+
+    gotoligcol(LIGNE_DEFAUT+7, COLONNE_DEFAUT-2);
+    printf("12");
+
+
+    Color(15, 0);
     gotoligcol(ligne, 0);
 
 

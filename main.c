@@ -2,9 +2,6 @@
 
 int main() {
 
-    // === INITIALISATION DE L'ALEATOIRE ===
-    srand(time(NULL));
-
 
     // === ICONES DE TRESORS ET POSITIONS ===
 
@@ -288,8 +285,14 @@ int main() {
 
 
     // === VARIABLES MENU ===
+    int random_seed = time(NULL);
     int choix = 0;
     int alive = 1;
+    int init_partie = 1; // Demarrage de l'initialisation de la partie
+    int notice = 1; // Affichage de la notice de jeu
+
+    // === VARIABLES SECRET SETTINGS ===
+    int choix_secret_settings;
 
 
     // === VARIABLES (NOUVELLE) PARTIE ===
@@ -298,10 +301,10 @@ int main() {
     t_joueur joueur3;
     t_joueur joueur4;
     t_joueur tableau_joueurs[4] = {joueur1, joueur2, joueur3, joueur4};
+    t_joueur joueur_en_cours;
+    int index_joueur_en_cours;
     int nombre_joueurs = 0;
     int nombre_tresors_joueurs = 0;
-    int init_partie = 1;
-    int notice = 1;
     int remise_tresors[24] = {99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99};
     int selecteur_tresor_aleatoire = 0;
 
@@ -309,6 +312,9 @@ int main() {
 
 
     while (alive) {
+
+        // === INITIALISATION DE L'ALEATOIRE ===
+        srand(random_seed);
 
         if (choix == 0) {
 
@@ -336,9 +342,6 @@ int main() {
                 creer_partie(&choix, &nombre_joueurs, tableau_joueurs);
 
                 // === INITIALISATION DU PLATEAU (GENERATION DES TRESORS ET DES TUILES ALEATOIRES) ===
-
-
-                //init_plateau(plateau_de_jeu, sac_de_tuiles);
 
                                 // === INITIALISATION DU TABLEAU AVEC DE L'ALEATOIRE ===
                 /*
@@ -624,6 +627,12 @@ int main() {
 
                 afficher_tab_struct_joueurs(tableau_joueurs, nombre_joueurs);
 
+                // === DESIGNATION ALEATOIRE DU JOUEUR COMMENCANT LA PARTIE ===
+                selecteur_aleatoire = rand() % ((nombre_joueurs-1) - 0 + 1) + 0;
+
+                joueur_en_cours = tableau_joueurs[selecteur_aleatoire];
+                index_joueur_en_cours = selecteur_aleatoire;
+
                 init_partie = 0;
 
             }
@@ -658,12 +667,26 @@ int main() {
 
             Color(15, 0);
 
+            // === NOUVEAU TOUR ===
+            joueur_en_cours = tableau_joueurs[index_joueur_en_cours];
+
             // === AFFICHAGE DU PLATEAU ===
             afficher_plateau(plateau_de_jeu);
 
+            // === AFFICHAGE DES OPTIONS ===
+            options_joueur(joueur_en_cours, index_joueur_en_cours);
+
+            printf("\n");
             system("pause");
 
+            if (index_joueur_en_cours == (nombre_joueurs-1)) {
 
+                index_joueur_en_cours = 0;
+
+            } else {
+
+                index_joueur_en_cours = index_joueur_en_cours + 1;
+            }
 
 
         } else if (choix == 2) {
@@ -737,6 +760,75 @@ int main() {
             system("pause");
 
             choix = 0;
+
+        } else if (choix == 32765) {
+
+            system("cls");
+
+            printf("\n");
+
+            Color(10, 0);
+
+            printf("SECRET SETTINGS MENU \n");
+            printf("\n");
+
+            Color(12, 0);
+            printf("/!\\ DANGER ZONE: Modifier ces parametres pourrait empecher le jeu de fonctionner correctement /!\\ \n");
+            printf("\n");
+
+            Color(10, 0);
+
+            printf("1) Modifier le srand (seed d'aleatoire) \n");
+            printf("0) Retour au menu principal \n");
+
+            do {
+
+                Color(4, 0);
+
+                printf(">> ");
+
+                Color(15, 0);
+                scanf("%d", &choix_secret_settings);
+
+            } while ((choix_secret_settings != 0) && (choix_secret_settings != 1));
+
+            Color(10, 0);
+
+            if (choix_secret_settings == 0) {
+
+                choix = 0;
+
+            } else if (choix_secret_settings == 1) {
+
+                printf("\n");
+                printf("Merci d'entrer une nouvelle seed pour l'agorithme d'aleatoire (compris entre 0 et 4,294,967,295): \n");
+
+                do {
+
+                    Color(4, 0);
+
+                    printf(">> ");
+
+                    Color(15, 0);
+                    scanf("%u", &random_seed);
+
+                } while ( (random_seed > 4294967294) || (random_seed <= 0) );
+
+                printf("\n");
+
+                printf("La valeur de la seed aleatoire a bien ete changee.");
+
+                printf("\n");
+
+                Color(15, 0);
+
+                system("pause");
+                system("cls");
+
+                choix = 0;
+
+            }
+
         }
     }
 

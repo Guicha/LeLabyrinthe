@@ -66,7 +66,8 @@
 				9,
 				10,
 				11,
-				12
+				12,
+				13
 			]
 		}
 	],
@@ -114,7 +115,8 @@
 				9,
 				10,
 				11,
-				12
+				12,
+				13
 			]
 		},
 		{
@@ -202,6 +204,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/Testing/afficher_tab_struct_joueurs.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/NouvellePartie/options_joueur.c",
 			"sourceGroupIndex" : 0
 		}
 	],
