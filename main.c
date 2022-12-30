@@ -308,9 +308,22 @@ int main() {
     int remise_tresors[24] = {99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99};
     int selecteur_tresor_aleatoire = 0;
     int ligne_a_coulisser = 99;
+    int precedente_ligne_a_coulisser = 99;
+    int affichage_menu = 1;
+    int choix_option_joueur;
+    int switch_coulissage = 0;
 
+    int ligne_rouge = LIGNE_DEFAUT+22;
+    int colonne_rouge = COLONNE_DEFAUT+22;
 
+    int ligne_bleue = LIGNE_DEFAUT+4;
+    int colonne_bleue = COLONNE_DEFAUT+4;
 
+    int ligne_verte = LIGNE_DEFAUT+4;
+    int colonne_verte = COLONNE_DEFAUT+22;
+
+    int ligne_jaune =   LIGNE_DEFAUT+22;
+    int colonne_jaune = COLONNE_DEFAUT+4;
 
     while (alive) {
 
@@ -318,6 +331,8 @@ int main() {
         srand(random_seed);
 
         if (choix == 0) {
+
+            system("cls");
 
             init_partie = 1;
             notice = 1;
@@ -626,7 +641,7 @@ int main() {
 
                 }
 
-                afficher_tab_struct_joueurs(tableau_joueurs, nombre_joueurs);
+
 
 
                 // === DESIGNATION ALEATOIRE DU JOUEUR COMMENCANT LA PARTIE ===
@@ -638,105 +653,176 @@ int main() {
                 // === SPAWN DES JOUEURS SUR LES CASES ATTITREES ===
                 for (i=0; i<nombre_joueurs; i++) {
 
-                    chaine_temp = malloc(11 * sizeof (char));
-
                     if (tableau_joueurs[i].pion == 36) {
 
-                        strcpy(chaine_temp, plateau_de_jeu[70]);
-
-                        chaine_temp[4] = tableau_joueurs[i].pion;
-
-                        plateau_de_jeu[70] = chaine_temp;
+                        tableau_joueurs[i].ligne = ligne_rouge;
+                        tableau_joueurs[i].colonne = colonne_rouge;
 
                     } else if (tableau_joueurs[i].pion == 156) {
 
-                        strcpy(chaine_temp, plateau_de_jeu[10]);
-
-                        chaine_temp[4] = tableau_joueurs[i].pion;
-
-                        plateau_de_jeu[10] = chaine_temp;
+                        tableau_joueurs[i].ligne = ligne_bleue;
+                        tableau_joueurs[i].colonne = colonne_bleue;
 
                     } else if (tableau_joueurs[i].pion == 157) {
 
-                        strcpy(chaine_temp, plateau_de_jeu[16]);
-
-                        chaine_temp[4] = tableau_joueurs[i].pion;
-
-                        plateau_de_jeu[16] = chaine_temp;
+                        tableau_joueurs[i].ligne = ligne_verte;
+                        tableau_joueurs[i].colonne = colonne_verte;
 
                     } else if (tableau_joueurs[i].pion == 190) {
 
-                        strcpy(chaine_temp, plateau_de_jeu[64]);
-
-                        chaine_temp[4] = tableau_joueurs[i].pion;
-
-                        plateau_de_jeu[64] = chaine_temp;
+                        tableau_joueurs[i].ligne = ligne_jaune;
+                        tableau_joueurs[i].colonne = colonne_jaune;
 
                     }
                 }
 
-                free(chaine_temp);
+                afficher_tab_struct_joueurs(tableau_joueurs, nombre_joueurs);
 
                 init_partie = 0;
 
             }
 
-            system("cls");
-
-            if (notice == 1) {
-
-                notice_joueurs();
-
-                notice = 0;
+            if (choix != 0) {
 
                 system("cls");
-            }
+
+                if (notice == 1) {
+
+                    notice_joueurs();
+
+                    notice = 0;
+
+                    system("cls");
+                }
+
+                // === NOUVEAU TOUR ===
+                //Joueur en cours ===>  tableau_joueurs[index_joueur_en_cours];
 
 
-            gotoligcol(0, 0);
+                while (affichage_menu) {
 
-            printf("\n");
+                    // === AFFICHAGE DU TITRE ===
+                    gotoligcol(0, 0);
 
-            Color(3, 0);
+                    printf("\n");
 
-            printf("PARTIE DE ");
+                    Color(3, 0);
 
-            Color(12, 0);
+                    printf("PARTIE DE ");
 
-            printf("=== LABYRINTHE ===");
+                    Color(12, 0);
 
-            Color(3, 0);
+                    printf("=== LABYRINTHE ===");
 
-            printf(" => %d JOUEURS EN JEU !", nombre_joueurs);
+                    Color(3, 0);
 
-            Color(15, 0);
+                    printf(" => %d JOUEURS EN JEU !", nombre_joueurs);
 
-            // === NOUVEAU TOUR ===
-            joueur_en_cours = tableau_joueurs[index_joueur_en_cours];
+                    Color(15, 0);
 
-            // === AFFICHAGE DU PLATEAU ===
-            afficher_plateau(plateau_de_jeu);
+                    // === AFFICHAGE DU PLATEAU ===
+                    afficher_plateau(plateau_de_jeu, tableau_joueurs, nombre_joueurs);
 
-            // === AFFICHAGE DES OPTIONS ===
-            options_joueur(joueur_en_cours, index_joueur_en_cours, &ligne_a_coulisser);
 
-            // Implémenter un sous-programme pour faire coulisser les lignes/colonnes
+                    // === AFFICHAGE DES OPTIONS ===
+                    options_joueur(tableau_joueurs, index_joueur_en_cours, &choix_option_joueur, switch_coulissage);
 
-            // Sous-programme pour déplacer le joueur (faire attention aux murs etc)
+                    if (choix_option_joueur == 1) {
 
-            // Sous-programme pour compter les tresors s'il y a
-            affichagecomptagetresor(tableau_joueurs, nombre_joueurs);
+                        printf("Merci de selectionner une colonne ou ligne a faire coulisser: \n");
 
-            printf("\n");
-            system("pause");
+                        printf("\n");
 
-            if (index_joueur_en_cours == (nombre_joueurs-1)) {
+                        do {
 
-                index_joueur_en_cours = 0;
+                            Color(4, 0);
 
-            } else {
+                            printf(">> ");
 
-                index_joueur_en_cours = index_joueur_en_cours + 1;
+                            Color(15, 0);
+                            scanf("%d", &ligne_a_coulisser);
+
+                        } while ((ligne_a_coulisser != 1) && (ligne_a_coulisser != 2) && (ligne_a_coulisser != 3) && (ligne_a_coulisser != 4) && (ligne_a_coulisser != 5) && (ligne_a_coulisser != 6) && (ligne_a_coulisser != 7) && (ligne_a_coulisser != 8) && (ligne_a_coulisser != 9) && (ligne_a_coulisser != 10) && (ligne_a_coulisser != 11) && (ligne_a_coulisser != 12)  || (ligne_a_coulisser == precedente_ligne_a_coulisser));
+
+                        // Implémenter un sous-programme pour faire coulisser les lignes/colonnes
+                        coulissage_tuiles(plateau_de_jeu, ligne_a_coulisser, &precedente_ligne_a_coulisser);
+
+                        switch_coulissage = 1;
+                        system("cls");
+
+                    } else if (choix_option_joueur == 2) { // Deplacement du joueur
+
+                        deplacement_joueur(plateau_de_jeu, tableau_joueurs, index_joueur_en_cours, nombre_joueurs);
+
+                        affichage_menu = 0;
+
+                    } else if (choix_option_joueur == 3) { // Afficher tresor suivant
+
+                        // Suggestion: afficher le tresor sur un autre écran apres avoir clear la console et il faut appuyer pour continuer
+                        // Ou bien faire apparaitre le tresor quelques secondes (mettre la notice qui propose aux autres de pas regarder)
+                        system("cls");
+
+                        printf("\n");
+
+                        Color(3, 0);
+
+                        printf("AFFICHAGE DU PROCHAIN TRESOR DE ");
+
+                        Color(tableau_joueurs[index_joueur_en_cours].couleur, 0);
+
+                        printf("%s (Joueur %d)", tableau_joueurs[index_joueur_en_cours].pseudo, index_joueur_en_cours+1);
+
+                        Color(3, 0);
+
+                        printf(" ! \n");
+
+                        printf("\n");
+
+                        Color(12, 0);
+
+                        printf("Pour le bon deroulement de la partie, merci de faire preuve de fair-play et de s'abstenir de regarder l'ecran lorsqu'un joueur consulte ses cartes tresors, censees rester secretes a la vue des autres joueurs.\n ");
+
+                        printf("\n");
+
+                        Color(15, 0);
+
+                        printf("Prochain tresor a aller chercher: %c \n", tableau_joueurs[index_joueur_en_cours].tresors[2]);
+
+                        printf("\n");
+
+                        system("pause");
+                        system("cls");
+
+                    } else if (choix_option_joueur == 4) { // Options ingame / menu ingame
+
+                        // 2 choix: 1) revenir au menu dans la boucle en l'adaptant pour la partie
+                        // ou bien 2) appeler le sous programme "menu_ingame.c" en le modifiant bien sur
+                    }
+
+
+                    // Sous-programme pour déplacer le joueur (faire attention aux murs etc)
+
+                    // Sous-programme pour compter les tresors s'il y a
+
+                }
+
+                affichage_menu = 1;
+                switch_coulissage = 0;
+
+
+
+
+                printf("\n\n");
+                system("pause");
+
+                if (index_joueur_en_cours == (nombre_joueurs-1)) {
+
+                    index_joueur_en_cours = 0;
+
+                } else {
+
+                    index_joueur_en_cours = index_joueur_en_cours + 1;
+                }
             }
 
 

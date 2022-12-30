@@ -4,7 +4,7 @@
 
 #include "../../header.h"
 
-void afficher_plateau(char *plateau[81]) {
+void afficher_plateau(char *plateau[81], t_joueur tab_joueurs[4], int nb_joueurs) {
 
     // === VARIABLES DU PLATEAU DE JEU ===
     char chaine_temp[20];
@@ -355,9 +355,38 @@ void afficher_plateau(char *plateau[81]) {
     printf("12");
 
 
+
+    for (int i=0; i<nb_joueurs; i++) {
+
+        Color(tab_joueurs[i].couleur, 0);
+
+        if (tab_joueurs[i].pion == 36) {
+
+            gotoligcol(tab_joueurs[i].ligne, tab_joueurs[i].colonne);
+            printf("%c", tab_joueurs[i].pion);
+
+
+        } else if (tab_joueurs[i].pion == 156) {
+
+            gotoligcol(tab_joueurs[i].ligne, tab_joueurs[i].colonne);
+            printf("%c", tab_joueurs[i].pion);
+
+        } else if (tab_joueurs[i].pion == 157) {
+
+            gotoligcol(tab_joueurs[i].ligne, tab_joueurs[i].colonne);
+            printf("%c", tab_joueurs[i].pion);
+
+        } else if (tab_joueurs[i].pion == 190) {
+
+            gotoligcol(tab_joueurs[i].ligne, tab_joueurs[i].colonne);
+            printf("%c", tab_joueurs[i].pion);
+
+        }
+    }
+
+
     Color(15, 0);
     gotoligcol(ligne, 0);
-
 
     printf("\n");
     printf("\n");

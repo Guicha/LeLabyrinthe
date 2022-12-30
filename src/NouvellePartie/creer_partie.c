@@ -107,24 +107,29 @@ void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]) {
 
         if (i == 1)
         {
+
             tab_joueurs[0].pion = liste_pion[choix_pion];
 
             if (liste_pion[choix_pion] == 36) {
 
                 tab_joueurs[0].couleur = 12;
+                tab_joueurs[0].position = 70;
 
             } else if (liste_pion[choix_pion] == 156) {
 
                 tab_joueurs[0].couleur = 1;
+                tab_joueurs[0].position = 10;
 
             } else if (liste_pion[choix_pion] == 157) {
 
                 tab_joueurs[0].couleur = 2;
+                tab_joueurs[0].position = 16;
 
 
             } else if (liste_pion[choix_pion] == 190) {
 
                 tab_joueurs[0].couleur = 14;
+                tab_joueurs[0].position = 64;
             }
 
         }
@@ -135,19 +140,23 @@ void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]) {
             if (liste_pion[choix_pion] == 36) {
 
                 tab_joueurs[1].couleur = 12;
+                tab_joueurs[1].position = 70;
 
             } else if (liste_pion[choix_pion] == 156) {
 
                 tab_joueurs[1].couleur = 1;
+                tab_joueurs[1].position = 10;
 
             } else if (liste_pion[choix_pion] == 157) {
 
                 tab_joueurs[1].couleur = 2;
+                tab_joueurs[1].position = 16;
 
 
             } else if (liste_pion[choix_pion] == 190) {
 
                 tab_joueurs[1].couleur = 14;
+                tab_joueurs[1].position = 64;
             }
         }
         else if ( i == 3)
@@ -157,19 +166,23 @@ void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]) {
             if (liste_pion[choix_pion] == 36) {
 
                 tab_joueurs[2].couleur = 12;
+                tab_joueurs[2].position = 70;
 
             } else if (liste_pion[choix_pion] == 156) {
 
                 tab_joueurs[2].couleur = 1;
+                tab_joueurs[2].position = 10;
 
             } else if (liste_pion[choix_pion] == 157) {
 
                 tab_joueurs[2].couleur = 2;
+                tab_joueurs[2].position = 16;
 
 
             } else if (liste_pion[choix_pion] == 190) {
 
                 tab_joueurs[2].couleur = 14;
+                tab_joueurs[2].position = 64;
             }
         }
         else if ( i == 4)
@@ -179,19 +192,23 @@ void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]) {
             if (liste_pion[choix_pion] == 36) {
 
                 tab_joueurs[3].couleur = 12;
+                tab_joueurs[3].position = 70;
 
             } else if (liste_pion[choix_pion] == 156) {
 
                 tab_joueurs[3].couleur = 1;
+                tab_joueurs[3].position = 10;
 
             } else if (liste_pion[choix_pion] == 157) {
 
                 tab_joueurs[3].couleur = 2;
+                tab_joueurs[3].position = 16;
 
 
             } else if (liste_pion[choix_pion] == 190) {
 
                 tab_joueurs[3].couleur = 14;
+                tab_joueurs[3].position = 64;
             }
 
         }
