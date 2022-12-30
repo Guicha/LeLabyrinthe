@@ -21,23 +21,28 @@ void affichagecomptagetresor(t_joueur tab[4], int nb_joueurs)
     cptjoueurs4 = cptglobal;
     for ( c = 0; c < nb_joueurs; ++c)
     {
+        printf("Tresors du joueur %d: ", c);
         for ( d = 0; d < 12; ++d)
         {
             if (tab[0].tresors[d] == tab[0].pion)
             {
                 cptjoueurs1 -= 1;
+                printf("%c",tab[0].tresors[d+1]);
             }
             if (tab[1].tresors[d] == tab[1].pion)
             {
                 cptjoueurs2 -= 1;
+                printf("%c",tab[1].tresors[d+1]);
             }
             if (tab[2].tresors[d] == tab[2].pion)
             {
                 cptjoueurs3 -= 1;
+                printf("%c",tab[2].tresors[d+1]);
             }
             if (tab[3].tresors[d] == tab[3].pion)
             {
                 cptjoueurs4 -= 1;
+                printf("%c",tab[3].tresors[d+1]);
             }
         }
         if (cptjoueurs1 == 0 && tab[0].pion == 36)
