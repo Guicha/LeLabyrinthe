@@ -9,4 +9,6 @@ TODO
 - ~~Colorer les icones d'apparition des joueurs sur le plateau~~
 - ~~Faire l'attribution aléatoire des trésors aux différents joueurs~~
 - ~~Faire un menu secret pour rentrer un srand personnalisé~~
+- Regler les conditions de deplacement
+- Faire bouger le pion du joueur si la tuile sur laquelle il est coulisse
 

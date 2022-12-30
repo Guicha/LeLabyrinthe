@@ -68,7 +68,9 @@
 				11,
 				12,
 				13,
-				14
+				14,
+				15,
+				16
 			]
 		}
 	],
@@ -118,7 +120,9 @@
 				11,
 				12,
 				13,
-				14
+				14,
+				15,
+				16
 			]
 		},
 		{
@@ -218,6 +222,18 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "Affichagecomptagetresor.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/NouvellePartie/coulissage_tuiles.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/NouvellePartie/deplacement_joueur.c",
 			"sourceGroupIndex" : 0
 		}
 	],

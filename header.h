@@ -11,6 +11,7 @@
 #include <windows.h>
 #include <time.h>
 #include <dirent.h> // Pour parcourir les fichiers d'un dossier
+#include <conio.h>
 
 // === CONSTANTES ===
 
@@ -33,6 +34,9 @@ typedef struct carte_joueur {
     char tresors[12];
     int score;
     int couleur;
+    int ligne;
+    int colonne;
+    int position;
 
 } t_joueur;
 
@@ -45,10 +49,12 @@ void consulter_sauvegardes(int *selection);
 
 // === NOUVELLE PARTIE ===
 void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]);
-void afficher_plateau(char *plateau[81]);
+void afficher_plateau(char *plateau[81], t_joueur tab_joueurs[4], int nb_joueurs);
 void init_plateau(char *plateau[81], char *tab_tuiles[10]);
 void notice_joueurs();
-void options_joueur(t_joueur joueur_actuel, int num_joueur, int *coulisser);
+void options_joueur(t_joueur tab_joueurs[4], int index_joueur, int *choix_joueur, int coulissage);
+void coulissage_tuiles(char *plateau[81], int coulisser, int *old_coulisser);
+void deplacement_joueur(char *plateau1[81], t_joueur tab_joueurs1[4], int index_joueur, int nb_joueurs1);
 
 // === TESTING ===
 void afficher_tab_struct_joueurs(t_joueur tab[4], int nb_joueurs);
