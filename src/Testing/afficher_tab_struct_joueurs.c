@@ -13,6 +13,7 @@ void afficher_tab_struct_joueurs(t_joueur tab[4], int nb_joueurs) {
     int i;
     int j;
 
+
     for (i=0; i<nb_joueurs; i++) {
 
         printf("**** AFFICHAGE DU JOUEUR %d \n", i);
@@ -26,6 +27,7 @@ void afficher_tab_struct_joueurs(t_joueur tab[4], int nb_joueurs) {
         for (j=0; j<12; j++) {
 
             printf("%c ", tab[i].tresors[j]);
+
         }
 
         printf("\n");
@@ -38,6 +40,7 @@ void afficher_tab_struct_joueurs(t_joueur tab[4], int nb_joueurs) {
 
         printf("\n");
         printf("\n");
+
     }
 
     system("pause");

@@ -725,6 +725,7 @@ int main() {
             // Sous-programme pour déplacer le joueur (faire attention aux murs etc)
 
             // Sous-programme pour compter les tresors s'il y a
+            affichagecomptagetresor(tableau_joueurs, nombre_joueurs);
 
             printf("\n");
             system("pause");

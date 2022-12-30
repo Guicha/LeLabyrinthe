@@ -47,19 +47,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "D:\C zebi\CLion 2022.2.4\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "D:\C zebi\CLion 2022.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\deoli\Downloads\Projet-Algo-Semestre-1-main\SUII\Projet-Algo-Semestre-1
+CMAKE_SOURCE_DIR = C:\Users\yonat\OneDrive\Documents\GitHub\Projet-Algo-Semestre-1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\deoli\Downloads\Projet-Algo-Semestre-1-main\SUII\Projet-Algo-Semestre-1\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\yonat\OneDrive\Documents\GitHub\Projet-Algo-Semestre-1\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -67,7 +67,7 @@ CMAKE_BINARY_DIR = C:\Users\deoli\Downloads\Projet-Algo-Semestre-1-main\SUII\Pro
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"D:\C zebi\CLion 2022.2.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -77,7 +77,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"D:\C zebi\CLion 2022.2.4\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\deoli\Downloads\Projet-Algo-Semestre-1-main\SUII\Projet-Algo-Semestre-1\cmake-build-debug\CMakeFiles C:\Users\deoli\Downloads\Projet-Algo-Semestre-1-main\SUII\Projet-Algo-Semestre-1\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\yonat\OneDrive\Documents\GitHub\Projet-Algo-Semestre-1\cmake-build-debug\CMakeFiles C:\Users\yonat\OneDrive\Documents\GitHub\Projet-Algo-Semestre-1\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\deoli\Downloads\Projet-Algo-Semestre-1-main\SUII\Projet-Algo-Semestre-1\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\yonat\OneDrive\Documents\GitHub\Projet-Algo-Semestre-1\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -127,6 +127,30 @@ Projet_semestre_1: cmake_check_build_system
 Projet_semestre_1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projet_semestre_1.dir\build.make CMakeFiles/Projet_semestre_1.dir/build
 .PHONY : Projet_semestre_1/fast
+
+Affichagecomptagetresor.obj: Affichagecomptagetresor.c.obj
+.PHONY : Affichagecomptagetresor.obj
+
+# target to build an object file
+Affichagecomptagetresor.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projet_semestre_1.dir\build.make CMakeFiles/Projet_semestre_1.dir/Affichagecomptagetresor.c.obj
+.PHONY : Affichagecomptagetresor.c.obj
+
+Affichagecomptagetresor.i: Affichagecomptagetresor.c.i
+.PHONY : Affichagecomptagetresor.i
+
+# target to preprocess a source file
+Affichagecomptagetresor.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projet_semestre_1.dir\build.make CMakeFiles/Projet_semestre_1.dir/Affichagecomptagetresor.c.i
+.PHONY : Affichagecomptagetresor.c.i
+
+Affichagecomptagetresor.s: Affichagecomptagetresor.c.s
+.PHONY : Affichagecomptagetresor.s
+
+# target to generate assembly for a file
+Affichagecomptagetresor.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projet_semestre_1.dir\build.make CMakeFiles/Projet_semestre_1.dir/Affichagecomptagetresor.c.s
+.PHONY : Affichagecomptagetresor.c.s
 
 main.obj: main.c.obj
 .PHONY : main.obj
@@ -368,6 +392,78 @@ src/NouvellePartie/init_plateau.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projet_semestre_1.dir\build.make CMakeFiles/Projet_semestre_1.dir/src/NouvellePartie/init_plateau.c.s
 .PHONY : src/NouvellePartie/init_plateau.c.s
 
+src/NouvellePartie/notice_joueurs.obj: src/NouvellePartie/notice_joueurs.c.obj
+.PHONY : src/NouvellePartie/notice_joueurs.obj
+
+# target to build an object file
+src/NouvellePartie/notice_joueurs.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projet_semestre_1.dir\build.make CMakeFiles/Projet_semestre_1.dir/src/NouvellePartie/notice_joueurs.c.obj
+.PHONY : src/NouvellePartie/notice_joueurs.c.obj
+
+src/NouvellePartie/notice_joueurs.i: src/NouvellePartie/notice_joueurs.c.i
+.PHONY : src/NouvellePartie/notice_joueurs.i
+
+# target to preprocess a source file
+src/NouvellePartie/notice_joueurs.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projet_semestre_1.dir\build.make CMakeFiles/Projet_semestre_1.dir/src/NouvellePartie/notice_joueurs.c.i
+.PHONY : src/NouvellePartie/notice_joueurs.c.i
+
+src/NouvellePartie/notice_joueurs.s: src/NouvellePartie/notice_joueurs.c.s
+.PHONY : src/NouvellePartie/notice_joueurs.s
+
+# target to generate assembly for a file
+src/NouvellePartie/notice_joueurs.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projet_semestre_1.dir\build.make CMakeFiles/Projet_semestre_1.dir/src/NouvellePartie/notice_joueurs.c.s
+.PHONY : src/NouvellePartie/notice_joueurs.c.s
+
+src/NouvellePartie/options_joueur.obj: src/NouvellePartie/options_joueur.c.obj
+.PHONY : src/NouvellePartie/options_joueur.obj
+
+# target to build an object file
+src/NouvellePartie/options_joueur.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projet_semestre_1.dir\build.make CMakeFiles/Projet_semestre_1.dir/src/NouvellePartie/options_joueur.c.obj
+.PHONY : src/NouvellePartie/options_joueur.c.obj
+
+src/NouvellePartie/options_joueur.i: src/NouvellePartie/options_joueur.c.i
+.PHONY : src/NouvellePartie/options_joueur.i
+
+# target to preprocess a source file
+src/NouvellePartie/options_joueur.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projet_semestre_1.dir\build.make CMakeFiles/Projet_semestre_1.dir/src/NouvellePartie/options_joueur.c.i
+.PHONY : src/NouvellePartie/options_joueur.c.i
+
+src/NouvellePartie/options_joueur.s: src/NouvellePartie/options_joueur.c.s
+.PHONY : src/NouvellePartie/options_joueur.s
+
+# target to generate assembly for a file
+src/NouvellePartie/options_joueur.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projet_semestre_1.dir\build.make CMakeFiles/Projet_semestre_1.dir/src/NouvellePartie/options_joueur.c.s
+.PHONY : src/NouvellePartie/options_joueur.c.s
+
+src/Testing/afficher_tab_struct_joueurs.obj: src/Testing/afficher_tab_struct_joueurs.c.obj
+.PHONY : src/Testing/afficher_tab_struct_joueurs.obj
+
+# target to build an object file
+src/Testing/afficher_tab_struct_joueurs.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projet_semestre_1.dir\build.make CMakeFiles/Projet_semestre_1.dir/src/Testing/afficher_tab_struct_joueurs.c.obj
+.PHONY : src/Testing/afficher_tab_struct_joueurs.c.obj
+
+src/Testing/afficher_tab_struct_joueurs.i: src/Testing/afficher_tab_struct_joueurs.c.i
+.PHONY : src/Testing/afficher_tab_struct_joueurs.i
+
+# target to preprocess a source file
+src/Testing/afficher_tab_struct_joueurs.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projet_semestre_1.dir\build.make CMakeFiles/Projet_semestre_1.dir/src/Testing/afficher_tab_struct_joueurs.c.i
+.PHONY : src/Testing/afficher_tab_struct_joueurs.c.i
+
+src/Testing/afficher_tab_struct_joueurs.s: src/Testing/afficher_tab_struct_joueurs.c.s
+.PHONY : src/Testing/afficher_tab_struct_joueurs.s
+
+# target to generate assembly for a file
+src/Testing/afficher_tab_struct_joueurs.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projet_semestre_1.dir\build.make CMakeFiles/Projet_semestre_1.dir/src/Testing/afficher_tab_struct_joueurs.c.s
+.PHONY : src/Testing/afficher_tab_struct_joueurs.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -377,6 +473,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Projet_semestre_1
+	@echo ... Affichagecomptagetresor.obj
+	@echo ... Affichagecomptagetresor.i
+	@echo ... Affichagecomptagetresor.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
@@ -407,6 +506,15 @@ help:
 	@echo ... src/NouvellePartie/init_plateau.obj
 	@echo ... src/NouvellePartie/init_plateau.i
 	@echo ... src/NouvellePartie/init_plateau.s
+	@echo ... src/NouvellePartie/notice_joueurs.obj
+	@echo ... src/NouvellePartie/notice_joueurs.i
+	@echo ... src/NouvellePartie/notice_joueurs.s
+	@echo ... src/NouvellePartie/options_joueur.obj
+	@echo ... src/NouvellePartie/options_joueur.i
+	@echo ... src/NouvellePartie/options_joueur.s
+	@echo ... src/Testing/afficher_tab_struct_joueurs.obj
+	@echo ... src/Testing/afficher_tab_struct_joueurs.i
+	@echo ... src/Testing/afficher_tab_struct_joueurs.s
 .PHONY : help
 
 

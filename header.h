@@ -54,7 +54,8 @@ void options_joueur(t_joueur joueur_actuel, int num_joueur, int *coulisser);
 void afficher_tab_struct_joueurs(t_joueur tab[4], int nb_joueurs);
 
 
-
+// == COMPTAGE ==
+void affichagecomptagetresor(t_joueur tab[4], int nb_joueurs);
 
 
 #endif //PROJET_SEMESTRE_1_HEADER_H
