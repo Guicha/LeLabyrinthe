@@ -4,7 +4,7 @@
 
 #include "../../header.h"
 
-void menu_ingame() {
+void menu_ingame(int *choix_utilisateur) {
 
     int selection;
     int sauvegarde = 0;
@@ -43,6 +43,8 @@ void menu_ingame() {
     if (selection == 1) {
 
         //pass
+        system("cls");
+
     } else if (selection == 2) {
 
         // sauvegarde a faire plus tard
@@ -50,6 +52,7 @@ void menu_ingame() {
     } else if (selection == 3) {
 
         // il faudra vérifier avant que l'utilisateur veut vrm quitter sans sauvegarder
+        *choix_utilisateur = 0;
 
     }
 }

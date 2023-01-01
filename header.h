@@ -43,7 +43,7 @@ typedef struct carte_joueur {
 
 // === MENU ===
 void menu_principal(int *selection);
-void menu_ingame();
+void menu_ingame(int *choix_utilisateur);
 void credits(int *selection);
 void consulter_sauvegardes(int *selection);
 
@@ -53,15 +53,13 @@ void afficher_plateau(char *plateau[81], t_joueur tab_joueurs[4], int nb_joueurs
 void init_plateau(char *plateau[81], char *tab_tuiles[10]);
 void notice_joueurs();
 void options_joueur(t_joueur tab_joueurs[4], int index_joueur, int *choix_joueur, int coulissage);
-void coulissage_tuiles(char *plateau[81], int coulisser, int *old_coulisser);
+void coulissage_tuiles(char *plateau[81], t_joueur tab_joueurs[4], int coulisser, int *old_coulisser);
 void deplacement_joueur(char *plateau1[81], t_joueur tab_joueurs1[4], int index_joueur, int nb_joueurs1);
+void victoire(t_joueur gagnant);
 
 // === TESTING ===
 void afficher_tab_struct_joueurs(t_joueur tab[4], int nb_joueurs);
 
-
-// == COMPTAGE ==
-void affichagecomptagetresor(t_joueur tab[4], int nb_joueurs);
 
 
 #endif //PROJET_SEMESTRE_1_HEADER_H

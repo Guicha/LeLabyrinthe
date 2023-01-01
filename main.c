@@ -643,7 +643,6 @@ int main() {
 
 
 
-
                 // === DESIGNATION ALEATOIRE DU JOUEUR COMMENCANT LA PARTIE ===
                 selecteur_aleatoire = rand() % ((nombre_joueurs-1) - 0 + 1) + 0;
 
@@ -745,7 +744,7 @@ int main() {
                         } while ((ligne_a_coulisser != 1) && (ligne_a_coulisser != 2) && (ligne_a_coulisser != 3) && (ligne_a_coulisser != 4) && (ligne_a_coulisser != 5) && (ligne_a_coulisser != 6) && (ligne_a_coulisser != 7) && (ligne_a_coulisser != 8) && (ligne_a_coulisser != 9) && (ligne_a_coulisser != 10) && (ligne_a_coulisser != 11) && (ligne_a_coulisser != 12)  || (ligne_a_coulisser == precedente_ligne_a_coulisser));
 
                         // Implémenter un sous-programme pour faire coulisser les lignes/colonnes
-                        coulissage_tuiles(plateau_de_jeu, ligne_a_coulisser, &precedente_ligne_a_coulisser);
+                        coulissage_tuiles(plateau_de_jeu, tableau_joueurs, ligne_a_coulisser, &precedente_ligne_a_coulisser);
 
                         switch_coulissage = 1;
                         system("cls");
@@ -786,7 +785,7 @@ int main() {
 
                         Color(15, 0);
 
-                        printf("Prochain tresor a aller chercher: %c \n", tableau_joueurs[index_joueur_en_cours].tresors[2]);
+                        printf("Prochain tresor a aller chercher: %c \n", tableau_joueurs[index_joueur_en_cours].tresors[tableau_joueurs[index_joueur_en_cours].score]);
 
                         printf("\n");
 
@@ -797,12 +796,14 @@ int main() {
 
                         // 2 choix: 1) revenir au menu dans la boucle en l'adaptant pour la partie
                         // ou bien 2) appeler le sous programme "menu_ingame.c" en le modifiant bien sur
+
+                        menu_ingame(&choix);
+
+                        if (choix == 0) {
+
+                            affichage_menu = 0;
+                        }
                     }
-
-
-                    // Sous-programme pour déplacer le joueur (faire attention aux murs etc)
-
-                    // Sous-programme pour compter les tresors s'il y a
 
                 }
 
@@ -822,6 +823,16 @@ int main() {
                 } else {
 
                     index_joueur_en_cours = index_joueur_en_cours + 1;
+                }
+            }
+
+            for (int i=0; i<nombre_joueurs; i++) {
+
+                if (tableau_joueurs[i].score == nombre_tresors_joueurs) {
+
+                    victoire(tableau_joueurs[i]);
+
+                    choix = 0;
                 }
             }
 
