@@ -675,7 +675,8 @@ int main() {
                     }
                 }
 
-                afficher_tab_struct_joueurs(tableau_joueurs, nombre_joueurs);
+                // A activer pour le debug 
+                //afficher_tab_struct_joueurs(tableau_joueurs, nombre_joueurs);
 
                 init_partie = 0;
 
