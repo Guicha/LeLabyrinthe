@@ -9,7 +9,7 @@ void creer_partie(int *selection, int *nb_joueurs, t_joueur tab_joueurs[4]) {
     int confirmer;
     int nb_pions = 4;
     int choix_pion;
-    int liste_pion[5] = {36, 156, 157, 190};   //    36 = $  |  156 = £  |   157 = Ø     |   190 = ¥     |;
+    int liste_pion[5] = {36, 156, 157, 190};   //    36 = $  |  156 = £  |   157 = Ø   | 190 = ¥     |;
 
 
     system("cls");

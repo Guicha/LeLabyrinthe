@@ -4,11 +4,12 @@
 
 #include "../../header.h"
 
-void coulissage_tuiles(char *plateau[81], int coulisser, int *old_coulisser) {
+void coulissage_tuiles(char *plateau[81], t_joueur tab_joueurs[4], int coulisser, int *old_coulisser) {
 
     int i;
     int j;
 
+    int deplacer_joueur;
     char *tuile_supp;
     char *ligne_temp[7];
 
@@ -38,6 +39,32 @@ void coulissage_tuiles(char *plateau[81], int coulisser, int *old_coulisser) {
             j = j + 9;
         }
 
+
+        for (i=0; i<4; i++) {
+
+            deplacer_joueur = 1;
+
+            for (j=11; j<65; j=j+9) {
+
+                if (tab_joueurs[i].position == j && deplacer_joueur == 1) {
+
+                    tab_joueurs[i].position = tab_joueurs[i].position + 9;
+                    tab_joueurs[i].ligne = tab_joueurs[i].ligne + 3;
+
+                    deplacer_joueur = 0;
+                }
+
+            }
+
+            if (tab_joueurs[i].position == 65 && deplacer_joueur == 1) {
+
+                tab_joueurs[i].position = 11;
+                tab_joueurs[i].ligne = tab_joueurs[i].ligne - 18;
+
+                deplacer_joueur = 0;
+            }
+        }
+
         *old_coulisser = 9;
 
     } else if (coulisser == 2) {
@@ -62,6 +89,31 @@ void coulissage_tuiles(char *plateau[81], int coulisser, int *old_coulisser) {
             plateau[j] = ligne_temp[i];
 
             j = j + 9;
+        }
+
+        for (i=0; i<4; i++) {
+
+            deplacer_joueur = 1;
+
+            for (j=13; j<67; j=j+9) {
+
+                if (tab_joueurs[i].position == j && deplacer_joueur == 1) {
+
+                    tab_joueurs[i].position = tab_joueurs[i].position + 9;
+                    tab_joueurs[i].ligne = tab_joueurs[i].ligne + 3;
+
+                    deplacer_joueur = 0;
+                }
+
+            }
+
+            if (tab_joueurs[i].position == 67 && deplacer_joueur == 1) {
+
+                tab_joueurs[i].position = 13;
+                tab_joueurs[i].ligne = tab_joueurs[i].ligne - 18;
+
+                deplacer_joueur = 0;
+            }
         }
 
         *old_coulisser = 8;
@@ -92,6 +144,31 @@ void coulissage_tuiles(char *plateau[81], int coulisser, int *old_coulisser) {
 
         *old_coulisser = 7;
 
+        for (i=0; i<4; i++) {
+
+            deplacer_joueur = 1;
+
+            for (j=15; j<69; j=j+9) {
+
+                if (tab_joueurs[i].position == j && deplacer_joueur == 1) {
+
+                    tab_joueurs[i].position = tab_joueurs[i].position + 9;
+                    tab_joueurs[i].ligne = tab_joueurs[i].ligne + 3;
+
+                    deplacer_joueur = 0;
+                }
+
+                if (tab_joueurs[i].position == 69 && deplacer_joueur == 1) {
+
+                    tab_joueurs[i].position = 15;
+                    tab_joueurs[i].ligne = tab_joueurs[i].ligne - 18;
+
+                    deplacer_joueur = 0;
+                }
+
+            }
+        }
+
 
     } else if (coulisser == 4) {
 
@@ -115,6 +192,31 @@ void coulissage_tuiles(char *plateau[81], int coulisser, int *old_coulisser) {
             plateau[j] = ligne_temp[i];
 
             j = j - 1;
+        }
+
+        for (i=0; i<4; i++) {
+
+            deplacer_joueur = 1;
+
+            for (j=25; j>19; j=j-1) {
+
+                if (tab_joueurs[i].position == j && deplacer_joueur == 1) {
+
+                    tab_joueurs[i].position = tab_joueurs[i].position - 1;
+                    tab_joueurs[i].colonne = tab_joueurs[i].colonne - 3;
+
+                    deplacer_joueur = 0;
+                }
+
+                if (tab_joueurs[i].position == 19 && deplacer_joueur == 1) {
+
+                    tab_joueurs[i].position = 25;
+                    tab_joueurs[i].colonne = tab_joueurs[i].colonne + 18;
+
+                    deplacer_joueur = 0;
+                }
+
+            }
         }
 
         *old_coulisser = 12;
@@ -143,6 +245,31 @@ void coulissage_tuiles(char *plateau[81], int coulisser, int *old_coulisser) {
             j = j - 1;
         }
 
+        for (i=0; i<4; i++) {
+
+            deplacer_joueur = 1;
+
+            for (j=43; j>37; j=j-1) {
+
+                if (tab_joueurs[i].position == j && deplacer_joueur == 1) {
+
+                    tab_joueurs[i].position = tab_joueurs[i].position - 1;
+                    tab_joueurs[i].colonne = tab_joueurs[i].colonne - 3;
+
+                    deplacer_joueur = 0;
+                }
+
+                if (tab_joueurs[i].position == 37 && deplacer_joueur == 1) {
+
+                    tab_joueurs[i].position = 43;
+                    tab_joueurs[i].colonne = tab_joueurs[i].colonne + 18;
+
+                    deplacer_joueur = 0;
+                }
+
+            }
+        }
+
         *old_coulisser = 11;
 
     } else if (coulisser == 6) {
@@ -167,6 +294,31 @@ void coulissage_tuiles(char *plateau[81], int coulisser, int *old_coulisser) {
             plateau[j] = ligne_temp[i];
 
             j = j - 1;
+        }
+
+        for (i=0; i<4; i++) {
+
+            deplacer_joueur = 1;
+
+            for (j=61; j>55; j=j-1) {
+
+                if (tab_joueurs[i].position == j && deplacer_joueur == 1) {
+
+                    tab_joueurs[i].position = tab_joueurs[i].position - 1;
+                    tab_joueurs[i].colonne = tab_joueurs[i].colonne - 3;
+
+                    deplacer_joueur = 0;
+                }
+
+                if (tab_joueurs[i].position == 55 && deplacer_joueur == 1) {
+
+                    tab_joueurs[i].position = 61;
+                    tab_joueurs[i].colonne = tab_joueurs[i].colonne + 18;
+
+                    deplacer_joueur = 0;
+                }
+
+            }
         }
 
         *old_coulisser = 10;
@@ -195,6 +347,31 @@ void coulissage_tuiles(char *plateau[81], int coulisser, int *old_coulisser) {
             j = j - 9;
         }
 
+        for (i=0; i<4; i++) {
+
+            deplacer_joueur = 1;
+
+            for (j=69; j>15; j=j-9) {
+
+                if (tab_joueurs[i].position == j && deplacer_joueur == 1) {
+
+                    tab_joueurs[i].position = tab_joueurs[i].position - 9;
+                    tab_joueurs[i].ligne = tab_joueurs[i].ligne - 3;
+
+                    deplacer_joueur = 0;
+                }
+
+                if (tab_joueurs[i].position == 15 && deplacer_joueur == 1) {
+
+                    tab_joueurs[i].position = 69;
+                    tab_joueurs[i].ligne = tab_joueurs[i].ligne + 18;
+
+                    deplacer_joueur = 0;
+                }
+
+            }
+        }
+
         *old_coulisser = 3;
 
     } else if (coulisser == 8) {
@@ -219,6 +396,31 @@ void coulissage_tuiles(char *plateau[81], int coulisser, int *old_coulisser) {
             plateau[j] = ligne_temp[i];
 
             j = j - 9;
+        }
+
+        for (i=0; i<4; i++) {
+
+            deplacer_joueur = 1;
+
+            for (j=67; j>13; j=j-9) {
+
+                if (tab_joueurs[i].position == j && deplacer_joueur == 1) {
+
+                    tab_joueurs[i].position = tab_joueurs[i].position - 9;
+                    tab_joueurs[i].ligne = tab_joueurs[i].ligne - 3;
+
+                    deplacer_joueur = 0;
+                }
+
+                if (tab_joueurs[i].position == 13 && deplacer_joueur == 1) {
+
+                    tab_joueurs[i].position = 67;
+                    tab_joueurs[i].ligne = tab_joueurs[i].ligne + 18;
+
+                    deplacer_joueur = 0;
+                }
+
+            }
         }
 
         *old_coulisser = 2;
@@ -247,6 +449,31 @@ void coulissage_tuiles(char *plateau[81], int coulisser, int *old_coulisser) {
             j = j - 9;
         }
 
+        for (i=0; i<4; i++) {
+
+            deplacer_joueur = 1;
+
+            for (j=65; j>11; j=j-9) {
+
+                if (tab_joueurs[i].position == j && deplacer_joueur == 1) {
+
+                    tab_joueurs[i].position = tab_joueurs[i].position - 9;
+                    tab_joueurs[i].ligne = tab_joueurs[i].ligne - 3;
+
+                    deplacer_joueur = 0;
+                }
+
+                if (tab_joueurs[i].position == 11 && deplacer_joueur == 1) {
+
+                    tab_joueurs[i].position = 65;
+                    tab_joueurs[i].ligne = tab_joueurs[i].ligne + 18;
+
+                    deplacer_joueur = 0;
+                }
+
+            }
+        }
+
         *old_coulisser = 1;
 
     } else if (coulisser == 10) {
@@ -271,6 +498,31 @@ void coulissage_tuiles(char *plateau[81], int coulisser, int *old_coulisser) {
             plateau[j] = ligne_temp[i];
 
             j = j + 1;
+        }
+
+        for (i=0; i<4; i++) {
+
+            deplacer_joueur = 1;
+
+            for (j=55; j<61; j=j+1) {
+
+                if (tab_joueurs[i].position == j && deplacer_joueur == 1) {
+
+                    tab_joueurs[i].position = tab_joueurs[i].position + 1;
+                    tab_joueurs[i].colonne = tab_joueurs[i].colonne + 3;
+
+                    deplacer_joueur = 0;
+                }
+
+                if (tab_joueurs[i].position == 61 && deplacer_joueur == 1) {
+
+                    tab_joueurs[i].position = 55;
+                    tab_joueurs[i].colonne = tab_joueurs[i].colonne - 18;
+
+                    deplacer_joueur = 0;
+                }
+
+            }
         }
 
         *old_coulisser = 6;
@@ -299,6 +551,31 @@ void coulissage_tuiles(char *plateau[81], int coulisser, int *old_coulisser) {
             j = j + 1;
         }
 
+        for (i=0; i<4; i++) {
+
+            deplacer_joueur = 1;
+
+            for (j=37; j<43; j=j+1) {
+
+                if (tab_joueurs[i].position == j && deplacer_joueur == 1) {
+
+                    tab_joueurs[i].position = tab_joueurs[i].position + 1;
+                    tab_joueurs[i].colonne = tab_joueurs[i].colonne + 3;
+
+                    deplacer_joueur = 0;
+                }
+
+                if (tab_joueurs[i].position == 43 && deplacer_joueur == 1) {
+
+                    tab_joueurs[i].position = 37;
+                    tab_joueurs[i].colonne = tab_joueurs[i].colonne - 18;
+
+                    deplacer_joueur = 0;
+                }
+
+            }
+        }
+
         *old_coulisser = 5;
 
     } else if (coulisser == 12) {
@@ -323,6 +600,31 @@ void coulissage_tuiles(char *plateau[81], int coulisser, int *old_coulisser) {
             plateau[j] = ligne_temp[i];
 
             j = j + 1;
+        }
+
+        for (i=0; i<4; i++) {
+
+            deplacer_joueur = 1;
+
+            for (j=19; j<25; j=j+1) {
+
+                if (tab_joueurs[i].position == j && deplacer_joueur == 1) {
+
+                    tab_joueurs[i].position = tab_joueurs[i].position + 1;
+                    tab_joueurs[i].colonne = tab_joueurs[i].colonne + 3;
+
+                    deplacer_joueur = 0;
+                }
+
+                if (tab_joueurs[i].position == 25 && deplacer_joueur == 1) {
+
+                    tab_joueurs[i].position = 19;
+                    tab_joueurs[i].colonne = tab_joueurs[i].colonne - 18;
+
+                    deplacer_joueur = 0;
+                }
+
+            }
         }
 
         *old_coulisser = 4;

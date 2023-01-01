@@ -221,12 +221,6 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Affichagecomptagetresor.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
 			"path" : "src/NouvellePartie/coulissage_tuiles.c",
 			"sourceGroupIndex" : 0
 		},
@@ -234,6 +228,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/NouvellePartie/deplacement_joueur.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/NouvellePartie/victoire.c",
 			"sourceGroupIndex" : 0
 		}
 	],
