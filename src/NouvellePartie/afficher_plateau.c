@@ -7,7 +7,9 @@
 void afficher_plateau(char *plateau[81], t_joueur tab_joueurs[4], int nb_joueurs) {
 
     // === VARIABLES DU PLATEAU DE JEU ===
-    char chaine_temp[20];
+    char chaine_temp[50];
+
+    char *tuile_supp;
 
 
     int ligne = LIGNE_DEFAUT;
@@ -31,7 +33,6 @@ void afficher_plateau(char *plateau[81], t_joueur tab_joueurs[4], int nb_joueurs
     printf("= TUILE SUPPLEMENTAIRE =");
 
     Color(15, 0);
-
 
     gotoligcol(LIGNE_DEFAUT, COLONNE_DEFAUT);
 
@@ -163,7 +164,11 @@ void afficher_plateau(char *plateau[81], t_joueur tab_joueurs[4], int nb_joueurs
 
                 if (i == 71) {
 
-                    // pass
+                    if (chaine_temp[0] == 'C') {
+
+                        gotoligcol(100, 200);
+                        printf("%s", chaine_temp);
+                    }
 
                 } else if (i == 10) {
 
@@ -301,12 +306,15 @@ void afficher_plateau(char *plateau[81], t_joueur tab_joueurs[4], int nb_joueurs
     }
 
     // Affichage de la tuile supplémentaire
+
+    tuile_supp = malloc(11 * sizeof (char));
+
     gotoligcol(ligne_tuile_supp, colonne_tuile_supp);
-    strcpy(chaine_temp, plateau[71]);
+    strcpy(tuile_supp, plateau[71]);
 
     for (int i=0; i<9; i++) {
 
-        printf("%c", chaine_temp[i]);
+        printf("%c", tuile_supp[i]);
 
         if (i==2 || i==5 || i==8) {
 
@@ -314,6 +322,8 @@ void afficher_plateau(char *plateau[81], t_joueur tab_joueurs[4], int nb_joueurs
             gotoligcol(ligne_tuile_supp, colonne_tuile_supp);
         }
     }
+
+    free(tuile_supp);
 
     // Affichage des numeros des colonnes et lignes
     Color(10, 0);

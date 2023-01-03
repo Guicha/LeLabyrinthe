@@ -16,4 +16,5 @@ TODO
 - ~~Detecter la victoire~~
 - ~~Afficher les prochains tresors~~
 - ~~Faire le menu ingame~~
+- Regler le probleme d'affichage de path (hint: afficher la tuile 71 autre part)
 

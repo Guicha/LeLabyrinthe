@@ -109,7 +109,6 @@ int main() {
     // R = pion rouge
     // J = pion jaune
 
-
     char *chaine_temp_init_plateau = NULL;
 
     // === GENERATION DES TRESORS ET POSITIONS DE DEPART DES TUILES FIXES ===
@@ -324,6 +323,7 @@ int main() {
 
     int ligne_jaune =   LIGNE_DEFAUT+22;
     int colonne_jaune = COLONNE_DEFAUT+4;
+
 
     while (alive) {
 
@@ -697,7 +697,6 @@ int main() {
 
                 // === NOUVEAU TOUR ===
                 //Joueur en cours ===>  tableau_joueurs[index_joueur_en_cours];
-
 
                 while (affichage_menu) {
 
