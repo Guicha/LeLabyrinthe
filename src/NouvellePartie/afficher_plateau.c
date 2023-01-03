@@ -11,6 +11,8 @@ void afficher_plateau(char *plateau[81], t_joueur tab_joueurs[4], int nb_joueurs
 
     char *tuile_supp;
 
+    char *tuile_supp;
+
 
     int ligne = LIGNE_DEFAUT;
     int ligne_precedente = LIGNE_DEFAUT;
