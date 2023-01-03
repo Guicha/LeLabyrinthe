@@ -28,6 +28,8 @@ void deplacement_joueur(char *plateau1[81], t_joueur tab_joueurs1[4], int index_
 
             system("cls");
 
+            Sleep(200);
+
             afficher_plateau(plateau1, tab_joueurs1, nb_joueurs1);
 
             printf("\n");

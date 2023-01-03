@@ -35,8 +35,8 @@ void afficher_plateau(char *plateau[81], t_joueur tab_joueurs[4], int nb_joueurs
 
     gotoligcol(LIGNE_DEFAUT, COLONNE_DEFAUT);
 
-
     for (int i = 0; i < 81; ++i) {
+
 
         if (color_ligne == 0) {
 

@@ -675,7 +675,7 @@ int main() {
                     }
                 }
 
-                // A activer pour le debug 
+                // A activer pour le debug
                 //afficher_tab_struct_joueurs(tableau_joueurs, nombre_joueurs);
 
                 init_partie = 0;
@@ -721,6 +721,8 @@ int main() {
                     Color(15, 0);
 
                     // === AFFICHAGE DU PLATEAU ===
+                    Sleep(200);
+
                     afficher_plateau(plateau_de_jeu, tableau_joueurs, nombre_joueurs);
 
 
