@@ -7,8 +7,7 @@
 void afficher_plateau(char *plateau[81], t_joueur tab_joueurs[4], int nb_joueurs) {
 
     // === VARIABLES DU PLATEAU DE JEU ===
-    char chaine_temp[20];
-
+    char chaine_temp[100];
 
     int ligne = LIGNE_DEFAUT;
     int ligne_precedente = LIGNE_DEFAUT;

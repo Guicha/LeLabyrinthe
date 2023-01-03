@@ -721,8 +721,6 @@ int main() {
                     Color(15, 0);
 
                     // === AFFICHAGE DU PLATEAU ===
-                    Sleep(200);
-
                     afficher_plateau(plateau_de_jeu, tableau_joueurs, nombre_joueurs);
 
 
@@ -754,7 +752,106 @@ int main() {
 
                     } else if (choix_option_joueur == 2) { // Deplacement du joueur
 
-                        deplacement_joueur(plateau_de_jeu, tableau_joueurs, index_joueur_en_cours, nombre_joueurs);
+                        int carac;
+                        int deplacement = 1;
+
+                        char *chaine_temp;
+
+                        /*
+                         * === GLOSSAIRE DES DIRECTIONS ===
+                         *
+                         * haut = 1
+                         * bas = 2
+                         * gauche = 3
+                         * droite = 4
+                         *
+                         * */
+
+
+                        while (deplacement) {
+
+                            do {
+
+                                system("cls");
+
+                                afficher_plateau(plateau_de_jeu, tableau_joueurs, nombre_joueurs);
+
+                                printf("\n");
+
+                                printf("Utiliser ZQSD pour se deplacer | X pour mettre un terme au deplacement (ou rester directement immobile) \n");
+
+                                printf("\n");
+
+                                Color(4, 0);
+
+                                printf(">> ");
+
+                                Color(15, 0);
+
+                                carac = getch();
+
+
+                            } while (((char) carac != 'z') && ((char) carac != 'q') && ((char) carac != 's') && ((char) carac != 'd') && ((char) carac != 'x'));
+
+
+                            if (carac == 'z') {
+
+                                if (plateau_de_jeu[tableau_joueurs[index_joueur_en_cours].position - 9][7] != '#' && plateau_de_jeu[tableau_joueurs[index_joueur_en_cours].position][1] != '#' && plateau_de_jeu[tableau_joueurs[index_joueur_en_cours].position-9][0] == '#') {
+
+                                    tableau_joueurs[index_joueur_en_cours].ligne = tableau_joueurs[index_joueur_en_cours].ligne - 3;
+                                    tableau_joueurs[index_joueur_en_cours].position = tableau_joueurs[index_joueur_en_cours].position - 9;
+
+                                }
+
+                            } else if ((char) carac == 'q') {
+
+                                if (plateau_de_jeu[tableau_joueurs[index_joueur_en_cours].position-1][5] != '#' && plateau_de_jeu[tableau_joueurs[index_joueur_en_cours].position][3] != '#' && plateau_de_jeu[tableau_joueurs[index_joueur_en_cours].position-1][0] == '#') {
+
+                                    tableau_joueurs[index_joueur_en_cours].colonne = tableau_joueurs[index_joueur_en_cours].colonne - 3;
+                                    tableau_joueurs[index_joueur_en_cours].position = tableau_joueurs[index_joueur_en_cours].position - 1;
+
+                                }
+
+                            } else if ((char) carac == 's') {
+
+                                if (plateau_de_jeu[tableau_joueurs[index_joueur_en_cours].position+9][1] != '#' && plateau_de_jeu[tableau_joueurs[index_joueur_en_cours].position][7] != '#' && plateau_de_jeu[tableau_joueurs[index_joueur_en_cours].position+9][0] == '#') {
+
+                                    tableau_joueurs[index_joueur_en_cours].ligne = tableau_joueurs[index_joueur_en_cours].ligne + 3;
+                                    tableau_joueurs[index_joueur_en_cours].position = tableau_joueurs[index_joueur_en_cours].position + 9;
+
+                                }
+
+                            } else if ((char) carac == 'd') {
+
+                                if (plateau_de_jeu[tableau_joueurs[index_joueur_en_cours].position+1][3] != '#' && plateau_de_jeu[tableau_joueurs[index_joueur_en_cours].position][5] != '#' && plateau_de_jeu[tableau_joueurs[index_joueur_en_cours].position+1][0] == '#') {
+
+                                    tableau_joueurs[index_joueur_en_cours].colonne = tableau_joueurs[index_joueur_en_cours].colonne + 3;
+                                    tableau_joueurs[index_joueur_en_cours].position = tableau_joueurs[index_joueur_en_cours].position + 1;
+
+                                }
+
+                            } else if ((char) carac == 'x') {
+
+                                if (plateau_de_jeu[tableau_joueurs[index_joueur_en_cours].position][4] == tableau_joueurs[index_joueur_en_cours].tresors[tableau_joueurs[index_joueur_en_cours].score]) {
+
+                                    tableau_joueurs[index_joueur_en_cours].score = tableau_joueurs[index_joueur_en_cours].score + 1;
+
+                                    chaine_temp = malloc(11 * sizeof (char));
+
+                                    strcpy(chaine_temp, plateau_de_jeu[tableau_joueurs[index_joueur_en_cours].position]);
+
+                                    chaine_temp[4] = ' ';
+
+                                    plateau_de_jeu[tableau_joueurs[index_joueur_en_cours].position] = chaine_temp;
+
+                                    free(chaine_temp);
+                                }
+
+                                deplacement = 0;
+                            }
+
+                        }
+
 
                         affichage_menu = 0;
 
